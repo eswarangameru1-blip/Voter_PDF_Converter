@@ -51,6 +51,36 @@ document.addEventListener("DOMContentLoaded", () => {
     let pollInterval = null;
     let activeTaskId = null;
     let startTime = null;
+    let activeExcelB64 = null;
+    let activeFilename = null;
+
+    function triggerExcelDownload(taskId) {
+        if (activeExcelB64) {
+            try {
+                const byteCharacters = atob(activeExcelB64);
+                const byteNumbers = new Array(byteCharacters.length);
+                for (let i = 0; i < byteCharacters.length; i++) {
+                    byteNumbers[i] = byteCharacters.charCodeAt(i);
+                }
+                const byteArray = new Uint8Array(byteNumbers);
+                const blob = new Blob([byteArray], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                let dlName = activeFilename || "voter_details.xlsx";
+                if (!dlName.endsWith(".xlsx")) dlName += ".xlsx";
+                a.download = dlName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                setTimeout(() => URL.revokeObjectURL(url), 1000);
+                return;
+            } catch (err) {
+                console.error("Client-side Base64 download error, using endpoint:", err);
+            }
+        }
+        window.location.href = `/api/download/${taskId}`;
+    }
 
     // Load persisted settings on launch
     loadSettings();
@@ -153,6 +183,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function resetUploadCard() {
         selectedFile = null;
+        activeExcelB64 = null;
+        activeFilename = null;
         fileInput.value = "";
         dropZone.style.display = "flex";
         fileDetails.style.display = "none";
@@ -171,6 +203,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Upload & Convert
     btnStartConvert.addEventListener("click", () => {
         if (!selectedFile) return;
+
+        activeExcelB64 = null;
+        activeFilename = null;
 
         const formData = new FormData();
         formData.append("file", selectedFile);
@@ -204,7 +239,17 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(data => {
             activeTaskId = data.task_id;
-            startPolling(data.task_id);
+            if (data.excel_b64) {
+                activeExcelB64 = data.excel_b64;
+            }
+            if (data.filename) {
+                activeFilename = data.filename.replace(/\.pdf$/i, "") + "_voter_details.xlsx";
+            }
+            if (data.status === "completed") {
+                showSuccess(data, data.task_id);
+            } else {
+                startPolling(data.task_id);
+            }
         })
         .catch(err => {
             showError(err.message);
@@ -280,7 +325,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Success View
     function showSuccess(data, taskId) {
-        resTotal.textContent = data.records_found;
+        if (data.excel_b64) {
+            activeExcelB64 = data.excel_b64;
+        }
+        if (data.filename) {
+            activeFilename = data.filename.replace(/\.pdf$/i, "") + "_voter_details.xlsx";
+        }
+
+        resTotal.textContent = data.records_found || 0;
         
         // Extract duplicates/invalid records from data or display mock/safe defaults
         resDuplicates.textContent = data.duplicates_removed || 0;
@@ -299,7 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Hook download trigger
         btnDownloadExcel.onclick = () => {
-            window.location.href = `/api/download/${taskId}`;
+            triggerExcelDownload(taskId);
         };
 
         showCard(cardResult);
@@ -307,7 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Automatic Download
         setTimeout(() => {
-            window.location.href = `/api/download/${taskId}`;
+            triggerExcelDownload(taskId);
         }, 800);
     }
 

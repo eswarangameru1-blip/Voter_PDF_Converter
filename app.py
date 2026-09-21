@@ -4,10 +4,11 @@ import time
 import json
 import logging
 import shutil
+import base64
 from datetime import datetime
 from typing import Dict, Any, List
 from fastapi import FastAPI, UploadFile, File, BackgroundTasks, HTTPException, Request, Form
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -48,8 +49,9 @@ templates = Jinja2Templates(directory=TEMPLATES_DIR)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 
-# In-memory database for background task status tracking
+# In-memory database for background task status tracking and byte caching
 tasks_db: Dict[str, Dict[str, Any]] = {}
+EXCEL_BYTES_CACHE: Dict[str, bytes] = {}
 HISTORY_FILE = os.path.join(OUTPUT_DIR, "history.json")
 
 def load_history() -> List[Dict[str, Any]]:
@@ -176,6 +178,18 @@ def process_pdf_task(task_id: str, file_path: str, pdf_filename: str):
         
         export_res = export_to_excel(unique_voters, pdf_filename)
         actual_output_path = os.path.abspath(export_res["file"])
+        
+        # Read excel file into memory & base64 string
+        excel_b64 = None
+        try:
+            with open(actual_output_path, "rb") as ef:
+                file_bytes = ef.read()
+            EXCEL_BYTES_CACHE[task_id] = file_bytes
+            excel_b64 = base64.b64encode(file_bytes).decode("utf-8")
+            tasks_db[task_id]["excel_bytes"] = file_bytes
+            tasks_db[task_id]["excel_b64"] = excel_b64
+        except Exception as cache_err:
+            logger.error(f"Task {task_id}: Failed to cache file in memory: {cache_err}")
         
         # Capture invalid record stats
         invalid_records = export_res.get("invalid_records", 0)
@@ -321,15 +335,23 @@ async def upload_pdf(
         "filename": file.filename
     }
 
-    # 7. Add pipeline convert to background executor
-    background_tasks.add_task(
-        process_pdf_task,
-        task_id,
-        temp_pdf_path,
-        file.filename
-    )
-
-    return {"task_id": task_id}
+    # 7. Add pipeline convert to background executor (or synchronous execution on Vercel)
+    if IS_VERCEL:
+        process_pdf_task(task_id, temp_pdf_path, file.filename)
+        return {
+            "task_id": task_id,
+            "status": tasks_db[task_id].get("status"),
+            "excel_b64": tasks_db[task_id].get("excel_b64"),
+            "filename": file.filename
+        }
+    else:
+        background_tasks.add_task(
+            process_pdf_task,
+            task_id,
+            temp_pdf_path,
+            file.filename
+        )
+        return {"task_id": task_id}
 
 @app.get("/api/status/{task_id}")
 async def get_status(task_id: str):
@@ -355,55 +377,67 @@ async def get_status(task_id: str):
         "elapsed_time": elapsed_time_str,
         "stage": task["stage"],
         "warning": task["warning"],
-        "error": task["error"]
+        "error": task["error"],
+        "excel_b64": task.get("excel_b64"),
+        "filename": task.get("filename")
     })
 
 @app.get("/api/download/{task_id}")
 async def download_excel(task_id: str):
     """
-    Serves the output Excel spreadsheet file.
+    Serves the output Excel spreadsheet file from memory, base64, or disk fallback.
     """
     task = tasks_db.get(task_id)
-    
-    # If the task ID is not in active memory, check history database to resolve the filename
-    if not task:
-        history = load_history()
-        match = next((item for item in history if item["task_id"] == task_id), None)
-        if not match or match["status"] != "completed":
-            raise HTTPException(status_code=404, detail="File details could not be resolved.")
-        
-        # Extract filename from history file
-        base_name = os.path.splitext(os.path.basename(match["filename"]))[0]
-        # Resolve target xlsx matching name format
-        excel_path = os.path.join(OUTPUT_DIR, f"{base_name}_voter_details.xlsx")
-        
-        # Check if there are incremented files
-        if not os.path.exists(excel_path):
-            # Try searching output folder for matching prefix
-            files = os.listdir(OUTPUT_DIR)
-            matched_files = [f for f in files if f.startswith(f"{base_name}_voter_details")]
-            if matched_files:
-                # Grab the first match
-                excel_path = os.path.join(OUTPUT_DIR, matched_files[0])
-    else:
-        if task["status"] != "completed" or not task["excel_file"]:
-            raise HTTPException(status_code=400, detail="Compilation not completed or task failed.")
+    original_filename = "voter_details.xlsx"
+    if task and task.get("filename"):
+        clean_name = os.path.splitext(task['filename'])[0]
+        original_filename = f"{clean_name}_voter_details.xlsx"
+
+    # 1. Check in-memory EXCEL_BYTES_CACHE
+    if task_id in EXCEL_BYTES_CACHE:
+        return Response(
+            content=EXCEL_BYTES_CACHE[task_id],
+            media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            headers={"Content-Disposition": f'attachment; filename="{original_filename}"'}
+        )
+
+    # 2. Check task Base64 data
+    if task and task.get("excel_b64"):
+        b_data = base64.b64decode(task["excel_b64"])
+        return Response(
+            content=b_data,
+            media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            headers={"Content-Disposition": f'attachment; filename="{original_filename}"'}
+        )
+
+    # 3. Fallback: check physical file on disk
+    excel_path = None
+    if task and task.get("excel_file"):
         excel_path = task["excel_file"]
 
-    if not os.path.exists(excel_path):
-        raise HTTPException(status_code=404, detail="Excel spreadsheet file not found on disk.")
+    if not excel_path or not os.path.exists(excel_path):
+        history = load_history()
+        match = next((item for item in history if item["task_id"] == task_id), None)
+        if match and match.get("status") == "completed":
+            base_name = os.path.splitext(os.path.basename(match["filename"]))[0]
+            original_filename = f"{base_name}_voter_details.xlsx"
+            candidate_path = os.path.join(OUTPUT_DIR, f"{base_name}_voter_details.xlsx")
+            if os.path.exists(candidate_path):
+                excel_path = candidate_path
+            elif os.path.exists(OUTPUT_DIR):
+                files = os.listdir(OUTPUT_DIR)
+                matched_files = [f for f in files if f.startswith(f"{base_name}_voter_details")]
+                if matched_files:
+                    excel_path = os.path.join(OUTPUT_DIR, matched_files[0])
 
-    original_filename = "voter_details.xlsx"
-    if task:
-        original_filename = f"{os.path.splitext(task['filename'])[0]}_voter_details.xlsx"
-    elif match:
-        original_filename = f"{os.path.splitext(match['filename'])[0]}_voter_details.xlsx"
+    if excel_path and os.path.exists(excel_path):
+        return FileResponse(
+            path=excel_path,
+            filename=original_filename,
+            media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        )
 
-    return FileResponse(
-        path=excel_path,
-        filename=original_filename,
-        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    )
+    raise HTTPException(status_code=404, detail="Excel spreadsheet file not found on disk.")
 
 @app.get("/api/history")
 async def get_history():
