@@ -260,7 +260,8 @@ def export_to_excel(raw_voters: List[Dict[str, Any]], source_pdf_name: str) -> D
     
     return {
         "status": "success",
-        "file": relative_file_path,
+        "file": output_path,
+        "relative_file": relative_file_path,
         "records": len(valid_voters),
         "duplicates_removed": duplicates_count,
         "invalid_records": invalid_count
