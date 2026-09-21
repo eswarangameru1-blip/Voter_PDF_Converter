@@ -136,8 +136,13 @@ def export_to_excel(raw_voters: List[Dict[str, Any]], source_pdf_name: str) -> D
     start_time = time.time()
     
     # 1. Setup output directory & filename incrementing logic
-    output_dir = os.path.join(os.getcwd(), "output")
-    os.makedirs(output_dir, exist_ok=True)
+    import tempfile
+    is_vercel = bool(os.environ.get("VERCEL") or os.environ.get("AWS_LAMBDA_FUNCTION_NAME"))
+    output_dir = os.path.join(tempfile.gettempdir(), "output") if is_vercel else os.path.join(os.getcwd(), "output")
+    try:
+        os.makedirs(output_dir, exist_ok=True)
+    except Exception as dir_err:
+        logger.warning(f"Could not create output directory {output_dir}: {dir_err}")
     
     # Deriving base filename from source PDF filename
     base_name = os.path.splitext(os.path.basename(source_pdf_name))[0]

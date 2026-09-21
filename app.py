@@ -24,23 +24,29 @@ from excel_export import export_to_excel
 
 app = FastAPI(title="Voter PDF Converter", version="1.0")
 
-# Setup directories automatically
+import tempfile
+
+# Setup directories automatically (using system temp dir on serverless read-only environments)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-UPLOAD_DIR = os.path.join(BASE_DIR, "uploads")
-OUTPUT_DIR = os.path.join(BASE_DIR, "output")
-LOG_DIR = os.path.join(BASE_DIR, "logs")
+IS_VERCEL = bool(os.environ.get("VERCEL") or os.environ.get("AWS_LAMBDA_FUNCTION_NAME"))
+TEMP_BASE = tempfile.gettempdir() if IS_VERCEL else BASE_DIR
+
+UPLOAD_DIR = os.path.join(TEMP_BASE, "uploads")
+OUTPUT_DIR = os.path.join(TEMP_BASE, "output")
+LOG_DIR = os.path.join(TEMP_BASE, "logs")
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 
-os.makedirs(UPLOAD_DIR, exist_ok=True)
-os.makedirs(OUTPUT_DIR, exist_ok=True)
-os.makedirs(LOG_DIR, exist_ok=True)
-os.makedirs(TEMPLATES_DIR, exist_ok=True)
-os.makedirs(STATIC_DIR, exist_ok=True)
+for dir_path in [UPLOAD_DIR, OUTPUT_DIR, LOG_DIR]:
+    try:
+        os.makedirs(dir_path, exist_ok=True)
+    except Exception as dir_err:
+        logger.warning(f"Could not create directory {dir_path}: {dir_err}")
 
 # Templates & Static Files setup
 templates = Jinja2Templates(directory=TEMPLATES_DIR)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
 
 # In-memory database for background task status tracking
 tasks_db: Dict[str, Dict[str, Any]] = {}
