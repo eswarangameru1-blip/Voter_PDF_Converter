@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter PDF Converter - ECI Extraction Suite</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Favicon Mock -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗳️</text></svg>">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    <div class="glow-bg-purple"></div>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="glass-nav">
+            <div class="nav-logo">
+                <i class="fa-solid fa-box-archive logo-icon"></i>
+                <div class="brand-info">
+                    <h1>Voter PDF Converter</h1>
+                    <span class="version-tag">v1.0 (ECI Edition)</span>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button id="btn-settings-toggle" class="btn-icon" title="Pipeline Settings">
+                    <i class="fa-solid fa-sliders"></i>
+                </button>
+                <button id="btn-history-toggle" class="btn-icon" title="History Log">
+                    <i class="fa-solid fa-history"></i>
+                </button>
+                <a href="/api/health" target="_blank" class="health-status-badge">
+                    <span class="pulse-indicator"></span> Healthy
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Layout Grid -->
+        <main class="main-layout">
+            <!-- Left/Center Workspace -->
+            <div class="workspace-area">
+                
+                <!-- Welcome/Uploader Card -->
+                <div id="card-upload" class="glass-card active">
+                    <div class="card-header">
+                        <h2>Convert Voter Roll PDF</h2>
+                        <p>Extract and format ECI voter registration rolls into professionally styled Excel files</p>
+                    </div>
+
+                    <!-- Drag & Drop Zone -->
+                    <div id="drop-zone" class="drop-zone">
+                        <input type="file" id="file-input" accept=".pdf" style="display: none;">
+                        <div class="drop-icon-container">
+                            <i class="fa-solid fa-file-pdf pdf-glow-icon"></i>
+                        </div>
+                        <h3>Drag & drop your PDF file here</h3>
+                        <p class="drop-help-text">Supports Andhra Pradesh & ECI standard templates (Max size 100MB)</p>
+                        <button type="button" id="btn-browse" class="btn-primary">
+                            <i class="fa-solid fa-folder-open"></i> Browse Files
+                        </button>
+                    </div>
+
+                    <!-- File Selected Info -->
+                    <div id="file-details" class="file-details" style="display: none;">
+                        <div class="file-icon-box">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <div class="file-info-text">
+                            <h4 id="selected-filename">AP800011.pdf</h4>
+                            <p id="selected-filesize">2.4 MB</p>
+                        </div>
+                        <button id="btn-remove-file" class="btn-close-sm" title="Remove File">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <!-- Conversion Action Footer -->
+                    <div class="card-action-bar">
+                        <button type="button" id="btn-start-convert" class="btn-action btn-convert-now" disabled>
+                            <i class="fa-solid fa-bolt"></i> Start Conversion
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Processing Progress Card -->
+                <div id="card-progress" class="glass-card" style="display: none;">
+                    <div class="card-header">
+                        <div class="loader-pulse"></div>
+                        <h2>Processing E-Roll</h2>
+                        <p>Our extraction parser is scanning and structuring records...</p>
+                    </div>
+
+                    <!-- Progress Stats -->
+                    <div class="progress-stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-label">Current Stage</span>
+                            <span id="progress-stage" class="stat-val highlight">Extracting summary...</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Records Found</span>
+                            <span id="progress-records" class="stat-val highlight">0</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Page Status</span>
+                            <span id="progress-pages" class="stat-val">0 / 0</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Time Elapsed</span>
+                            <span id="progress-time" class="stat-val">0s</span>
+                        </div>
+                    </div>
+
+                    <!-- Progress Indicator Bar -->
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-track">
+                            <div id="progress-bar-fill" class="progress-bar-fill" style="width: 0%"></div>
+                        </div>
+                        <div class="progress-label-row">
+                            <span id="progress-percent-label">0% Complete</span>
+                            <span id="progress-ocr-status" class="ocr-status-tag"><i class="fa-solid fa-circle-nodes"></i> PyMuPDF Selection</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Bar -->
+                    <div class="card-action-bar">
+                        <button type="button" id="btn-cancel-conversion" class="btn-action btn-danger">
+                            <i class="fa-solid fa-ban"></i> Cancel Job
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Complete / Result Summary Card -->
+                <div id="card-result" class="glass-card" style="display: none;">
+                    <!-- Success Animation Icon -->
+                    <div class="success-checkmark-wrapper">
+                        <div class="checkmark-circle">
+                            <div class="checkmark-stem"></div>
+                            <div class="checkmark-kick"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-header">
+                        <h2>Conversion Completed!</h2>
+                        <p>Excel workbook compiled with professional layout and verified properties</p>
+                    </div>
+
+                    <!-- Result Stats -->
+                    <div class="results-stats-grid">
+                        <div class="res-box">
+                            <i class="fa-solid fa-users icon-blue"></i>
+                            <div class="res-meta">
+                                <h3>Total Extracted</h3>
+                                <span id="res-total" class="res-num">0</span>
+                            </div>
+                        </div>
+                        <div class="res-box">
+                            <i class="fa-solid fa-copy icon-orange"></i>
+                            <div class="res-meta">
+                                <h3>Duplicates Skipped</h3>
+                                <span id="res-duplicates" class="res-num">0</span>
+                            </div>
+                        </div>
+                        <div class="res-box">
+                            <i class="fa-solid fa-triangle-exclamation icon-red"></i>
+                            <div class="res-meta">
+                                <h3>Invalid Records</h3>
+                                <span id="res-invalid" class="res-num">0</span>
+                            </div>
+                        </div>
+                        <div class="res-box">
+                            <i class="fa-solid fa-clock icon-green"></i>
+                            <div class="res-meta">
+                                <h3>Processing Duration</h3>
+                                <span id="res-duration" class="res-num">0.0s</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mismatch alert warnings -->
+                    <div id="result-warning-alert" class="warning-alert-box" style="display: none;">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span id="result-warning-text">Elector count mismatch warning! Summary page lists 58 records, but 60 were extracted.</span>
+                    </div>
+
+                    <!-- Action Bar -->
+                    <div class="card-action-bar dual-actions">
+                        <button type="button" id="btn-download-excel" class="btn-action btn-success">
+                            <i class="fa-solid fa-file-arrow-down"></i> Download Excel
+                        </button>
+                        <button type="button" id="btn-convert-another" class="btn-action btn-secondary">
+                            <i class="fa-solid fa-rotate-left"></i> Convert Another
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Error Card -->
+                <div id="card-error" class="glass-card" style="display: none;">
+                    <div class="error-icon-wrapper">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </div>
+                    
+                    <div class="card-header">
+                        <h2>Conversion Failed</h2>
+                        <p id="error-message-text" class="text-danger">An unexpected exception occurred inside the PDF reading engine.</p>
+                    </div>
+
+                    <div class="card-action-bar dual-actions">
+                        <button type="button" id="btn-error-retry" class="btn-action btn-primary">
+                            <i class="fa-solid fa-arrow-rotate-right"></i> Retry File
+                        </button>
+                        <button type="button" id="btn-error-dismiss" class="btn-action btn-secondary">
+                            <i class="fa-solid fa-house"></i> Home
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Panel / Collapsible History -->
+            <aside id="sidebar-history" class="glass-sidebar">
+                <div class="sidebar-header">
+                    <h3><i class="fa-solid fa-history"></i> Recent Activity</h3>
+                    <button id="btn-close-history" class="btn-close-sidebar"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="history-list-wrapper">
+                    <ul id="history-items-container" class="history-list">
+                        <!-- Items populated by JS -->
+                        <div class="empty-state-text">
+                            <i class="fa-regular fa-folder-open"></i>
+                            <p>No recent conversions found</p>
+                        </div>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Settings Modal -->
+        <div id="modal-settings" class="modal-overlay" style="display: none;">
+            <div class="modal-content glass-card">
+                <div class="modal-header">
+                    <h3><i class="fa-solid fa-gears"></i> Conversion Settings</h3>
+                    <button id="btn-close-settings" class="btn-close-modal"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <!-- OCR Settings Section -->
+                    <div class="settings-section">
+                        <h4><i class="fa-solid fa-eye"></i> OCR Engine Settings</h4>
+                        
+                        <div class="setting-row">
+                            <div class="setting-label">
+                                <span>Enable Fallback OCR</span>
+                                <small>Use PaddleOCR if PDF text quality is poor or scanned</small>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="setting-ocr-enabled" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div class="setting-label">
+                                <span>OCR Mode</span>
+                                <small>Select engine configuration model</small>
+                            </div>
+                            <select id="setting-ocr-engine" class="styled-select">
+                                <option value="paddle_dynamic">PaddleOCR Dynamic (Recommended)</option>
+                                <option value="tesseract">Tesseract Engine</option>
+                            </select>
+                        </div>
+
+                        <div class="setting-row">
+                            <div class="setting-label">
+                                <span>Auto-Detect Scanned Pages</span>
+                                <small>Analyze text bounds before applying fallback OCR</small>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="setting-auto-detect" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Export settings -->
+                    <div class="settings-section">
+                        <h4><i class="fa-solid fa-file-excel"></i> Export Settings</h4>
+                        
+                        <div class="setting-row">
+                            <div class="setting-label">
+                                <span>Output Layout Style</span>
+                                <small>Target worksheet format</small>
+                            </div>
+                            <select id="setting-export-format" class="styled-select">
+                                <option value="xlsx">Professional Excel Workbook (.xlsx)</option>
+                                <option value="csv">Comma-Separated Values (.csv)</option>
+                            </select>
+                        </div>
+
+                        <div class="setting-row">
+                            <div class="setting-label">
+                                <span>Interface Theme</span>
+                                <small>Customize panel looks</small>
+                            </div>
+                            <select id="setting-theme" class="styled-select">
+                                <option value="dark">Glassmorphic Dark Mode</option>
+                                <option value="light">Glassmorphic Light Mode</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn-save-settings" class="btn-primary">
+                        <i class="fa-solid fa-check"></i> Apply Settings
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Voter PDF Converter &bull; Version 1.0 &bull; ECI Optimization Module &bull; All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Application Script -->
+    <script src="/static/script.js"></script>
+</body>
+</html>

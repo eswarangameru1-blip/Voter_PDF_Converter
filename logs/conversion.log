@@ -1,0 +1,1615 @@
+2026-07-30 00:04:10,867 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 00:04:10,867 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 00:04:10,917 - verify_app - INFO - Summary extracted elector count: None
+2026-07-30 00:04:10,917 - verify_app - ERROR - Integration pipeline failure: Expected summary count 58, got None
+Traceback (most recent call last):
+  File "D:\AI WORK\verify_app.py", line 181, in test_pipeline
+    assert declared_count == 58, f"Expected summary count 58, got {declared_count}"
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected summary count 58, got None
+2026-07-30 00:04:34,956 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 00:04:34,958 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 00:04:34,993 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-30 00:04:34,993 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-30 00:04:34,993 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-30 00:04:34,995 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 00:04:49,084 - extractor - ERROR - Failed to initialize PaddleOCR engine: Unknown argument: show_log
+2026-07-30 00:04:49,084 - extractor - ERROR - Page 1 PaddleOCR failure: Unknown argument: show_log
+2026-07-30 00:04:49,085 - parser - ERROR - Page 1: OCR failed: Unknown argument: show_log
+2026-07-30 00:04:49,085 - parser - WARNING - Page 1: No body words found. Skipping page.
+2026-07-30 00:04:49,095 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:04:49,106 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:04:49,109 - verify_app - ERROR - Integration pipeline failure: 
+Traceback (most recent call last):
+  File "D:\AI WORK\verify_app.py", line 212, in test_pipeline
+    assert v1["Sex"] == "Female"
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+2026-07-30 00:05:21,499 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 00:05:21,499 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 00:05:21,534 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-30 00:05:21,534 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-30 00:05:21,535 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-30 00:05:21,536 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 00:05:36,309 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-07-30 00:05:36,546 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/PaddlePaddle/PP-LCNet_x1_0_doc_ori/revision/main "HTTP/1.1 200 OK"
+2026-07-30 00:05:36,785 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/PaddlePaddle/PP-LCNet_x1_0_doc_ori/tree/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-30 00:05:37,042 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-LCNet_x1_0_doc_ori/resolve/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/.gitattributes "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:37,059 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_doc_ori/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/.gitattributes "HTTP/1.1 200 OK"
+2026-07-30 00:05:37,074 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-LCNet_x1_0_doc_ori/resolve/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:37,077 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-LCNet_x1_0_doc_ori/resolve/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/inference.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:37,077 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-LCNet_x1_0_doc_ori/resolve/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/inference.yml "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:37,079 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_doc_ori/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/.gitattributes "HTTP/1.1 200 OK"
+2026-07-30 00:05:37,091 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_doc_ori/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/config.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:37,095 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_doc_ori/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/inference.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:37,097 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_doc_ori/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/inference.yml "HTTP/1.1 200 OK"
+2026-07-30 00:05:37,109 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_doc_ori/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/config.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:37,114 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_doc_ori/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/inference.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:37,116 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_doc_ori/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/inference.yml "HTTP/1.1 200 OK"
+2026-07-30 00:05:37,175 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-LCNet_x1_0_doc_ori/resolve/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:37,190 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_doc_ori/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/README.md "HTTP/1.1 200 OK"
+2026-07-30 00:05:37,210 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_doc_ori/d3b95a6dff5fe8a94f2748e12b61cb26818a0df8/README.md "HTTP/1.1 200 OK"
+2026-07-30 00:05:40,592 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/PaddlePaddle/UVDoc/revision/main "HTTP/1.1 200 OK"
+2026-07-30 00:05:40,841 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/PaddlePaddle/UVDoc/tree/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-30 00:05:41,086 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/UVDoc/resolve/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:41,106 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/UVDoc/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/config.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:41,130 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/UVDoc/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/config.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:41,144 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/UVDoc/resolve/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/.gitattributes "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:41,171 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/UVDoc/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/.gitattributes "HTTP/1.1 200 OK"
+2026-07-30 00:05:41,199 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/UVDoc/resolve/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/inference.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:41,199 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/UVDoc/resolve/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:41,199 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/UVDoc/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/.gitattributes "HTTP/1.1 200 OK"
+2026-07-30 00:05:41,201 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/UVDoc/resolve/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/inference.yml "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:41,223 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/UVDoc/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/README.md "HTTP/1.1 200 OK"
+2026-07-30 00:05:41,223 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/UVDoc/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/inference.yml "HTTP/1.1 200 OK"
+2026-07-30 00:05:41,224 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/UVDoc/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/inference.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:41,250 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/UVDoc/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/README.md "HTTP/1.1 200 OK"
+2026-07-30 00:05:41,251 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/UVDoc/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/inference.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:41,257 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/UVDoc/16c3f0ea9c2f0c6a57e24160f7eeaa7574613fa3/inference.yml "HTTP/1.1 200 OK"
+2026-07-30 00:05:44,841 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/PaddlePaddle/PP-LCNet_x1_0_textline_ori/revision/main "HTTP/1.1 200 OK"
+2026-07-30 00:05:45,085 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/PaddlePaddle/PP-LCNet_x1_0_textline_ori/tree/cd237a44b0e359d4fe38310a416203cf7403faa5?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-30 00:05:45,334 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-LCNet_x1_0_textline_ori/resolve/cd237a44b0e359d4fe38310a416203cf7403faa5/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:45,344 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-LCNet_x1_0_textline_ori/resolve/cd237a44b0e359d4fe38310a416203cf7403faa5/inference.yml "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:45,353 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_textline_ori/cd237a44b0e359d4fe38310a416203cf7403faa5/config.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:45,368 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_textline_ori/cd237a44b0e359d4fe38310a416203cf7403faa5/inference.yml "HTTP/1.1 200 OK"
+2026-07-30 00:05:45,381 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_textline_ori/cd237a44b0e359d4fe38310a416203cf7403faa5/config.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:45,387 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-LCNet_x1_0_textline_ori/resolve/cd237a44b0e359d4fe38310a416203cf7403faa5/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:45,398 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_textline_ori/cd237a44b0e359d4fe38310a416203cf7403faa5/inference.yml "HTTP/1.1 200 OK"
+2026-07-30 00:05:45,399 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-LCNet_x1_0_textline_ori/resolve/cd237a44b0e359d4fe38310a416203cf7403faa5/inference.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:45,416 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_textline_ori/cd237a44b0e359d4fe38310a416203cf7403faa5/README.md "HTTP/1.1 200 OK"
+2026-07-30 00:05:45,419 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_textline_ori/cd237a44b0e359d4fe38310a416203cf7403faa5/inference.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:45,440 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_textline_ori/cd237a44b0e359d4fe38310a416203cf7403faa5/inference.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:45,440 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_textline_ori/cd237a44b0e359d4fe38310a416203cf7403faa5/README.md "HTTP/1.1 200 OK"
+2026-07-30 00:05:45,441 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-LCNet_x1_0_textline_ori/resolve/cd237a44b0e359d4fe38310a416203cf7403faa5/.gitattributes "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:45,457 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_textline_ori/cd237a44b0e359d4fe38310a416203cf7403faa5/.gitattributes "HTTP/1.1 200 OK"
+2026-07-30 00:05:45,481 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-LCNet_x1_0_textline_ori/cd237a44b0e359d4fe38310a416203cf7403faa5/.gitattributes "HTTP/1.1 200 OK"
+2026-07-30 00:05:48,117 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/PaddlePaddle/PP-OCRv6_medium_det/revision/main "HTTP/1.1 200 OK"
+2026-07-30 00:05:48,362 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/PaddlePaddle/PP-OCRv6_medium_det/tree/8e0f56fb2ef86b461d99cfc7ac5c137738985f61?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-30 00:05:48,611 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_det/resolve/8e0f56fb2ef86b461d99cfc7ac5c137738985f61/.gitattributes "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:48,611 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_det/resolve/8e0f56fb2ef86b461d99cfc7ac5c137738985f61/inference.yml "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:48,630 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_det/8e0f56fb2ef86b461d99cfc7ac5c137738985f61/.gitattributes "HTTP/1.1 200 OK"
+2026-07-30 00:05:48,630 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_det/8e0f56fb2ef86b461d99cfc7ac5c137738985f61/inference.yml "HTTP/1.1 200 OK"
+2026-07-30 00:05:48,655 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_det/8e0f56fb2ef86b461d99cfc7ac5c137738985f61/inference.yml "HTTP/1.1 200 OK"
+2026-07-30 00:05:48,655 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_det/8e0f56fb2ef86b461d99cfc7ac5c137738985f61/.gitattributes "HTTP/1.1 200 OK"
+2026-07-30 00:05:48,656 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_det/resolve/8e0f56fb2ef86b461d99cfc7ac5c137738985f61/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:48,681 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_det/8e0f56fb2ef86b461d99cfc7ac5c137738985f61/README.md "HTTP/1.1 200 OK"
+2026-07-30 00:05:48,708 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_det/8e0f56fb2ef86b461d99cfc7ac5c137738985f61/README.md "HTTP/1.1 200 OK"
+2026-07-30 00:05:48,709 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_det/resolve/8e0f56fb2ef86b461d99cfc7ac5c137738985f61/inference.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:48,740 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_det/8e0f56fb2ef86b461d99cfc7ac5c137738985f61/inference.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:48,764 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_det/8e0f56fb2ef86b461d99cfc7ac5c137738985f61/inference.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:53,722 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/PaddlePaddle/PP-OCRv6_medium_rec/revision/main "HTTP/1.1 200 OK"
+2026-07-30 00:05:53,967 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/PaddlePaddle/PP-OCRv6_medium_rec/tree/e5a92bcbc5cc1b494628e458d267778f0704fd7c?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-30 00:05:54,219 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_rec/resolve/e5a92bcbc5cc1b494628e458d267778f0704fd7c/inference.yml "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:54,238 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_rec/e5a92bcbc5cc1b494628e458d267778f0704fd7c/inference.yml "HTTP/1.1 200 OK"
+2026-07-30 00:05:54,257 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_rec/resolve/e5a92bcbc5cc1b494628e458d267778f0704fd7c/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:54,258 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_rec/e5a92bcbc5cc1b494628e458d267778f0704fd7c/inference.yml "HTTP/1.1 200 OK"
+2026-07-30 00:05:54,259 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_rec/resolve/e5a92bcbc5cc1b494628e458d267778f0704fd7c/inference.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:54,276 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_rec/e5a92bcbc5cc1b494628e458d267778f0704fd7c/README.md "HTTP/1.1 200 OK"
+2026-07-30 00:05:54,283 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_rec/e5a92bcbc5cc1b494628e458d267778f0704fd7c/inference.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:54,300 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_rec/e5a92bcbc5cc1b494628e458d267778f0704fd7c/README.md "HTTP/1.1 200 OK"
+2026-07-30 00:05:54,300 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_rec/resolve/e5a92bcbc5cc1b494628e458d267778f0704fd7c/.gitattributes "HTTP/1.1 307 Temporary Redirect"
+2026-07-30 00:05:54,307 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_rec/e5a92bcbc5cc1b494628e458d267778f0704fd7c/inference.json "HTTP/1.1 200 OK"
+2026-07-30 00:05:54,322 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_rec/e5a92bcbc5cc1b494628e458d267778f0704fd7c/.gitattributes "HTTP/1.1 200 OK"
+2026-07-30 00:05:54,347 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/PaddlePaddle/PP-OCRv6_medium_rec/e5a92bcbc5cc1b494628e458d267778f0704fd7c/.gitattributes "HTTP/1.1 200 OK"
+2026-07-30 00:06:00,154 - extractor - INFO - PaddleOCR engine initialized successfully.
+2026-07-30 00:06:00,154 - extractor - ERROR - Page 1 PaddleOCR failure: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-07-30 00:06:00,154 - parser - ERROR - Page 1: OCR failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-07-30 00:06:00,155 - parser - WARNING - Page 1: No body words found. Skipping page.
+2026-07-30 00:06:00,166 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:06:00,178 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:06:00,183 - verify_app - ERROR - Integration pipeline failure: 
+Traceback (most recent call last):
+  File "D:\AI WORK\verify_app.py", line 206, in test_pipeline
+    assert v1["S.No"] == 1
+           ^^^^^^^^^^^^^^^
+AssertionError
+2026-07-30 00:06:44,871 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 00:06:44,872 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 00:06:44,903 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-30 00:06:44,903 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-30 00:06:44,904 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-30 00:06:44,905 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 00:06:48,482 - extractor - INFO - PaddleOCR engine initialized successfully.
+2026-07-30 00:06:48,482 - extractor - ERROR - Page 1 PaddleOCR failure: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-07-30 00:06:48,483 - parser - ERROR - Page 1: OCR failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-07-30 00:06:48,483 - parser - WARNING - Page 1: No body words found. Skipping page.
+2026-07-30 00:06:48,496 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:06:48,509 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:06:48,514 - verify_app - ERROR - Integration pipeline failure: 
+Traceback (most recent call last):
+  File "D:\AI WORK\verify_app.py", line 206, in test_pipeline
+    assert v1["S.No"] == 1
+           ^^^^^^^^^^^^^^^
+AssertionError
+2026-07-30 00:07:41,852 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 00:07:41,852 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 00:07:41,880 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-30 00:07:41,880 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-30 00:07:41,881 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-30 00:07:41,882 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 00:07:45,306 - extractor - INFO - PaddleOCR engine initialized successfully.
+2026-07-30 00:07:46,578 - extractor - ERROR - Page 1 PaddleOCR failure: (Unimplemented) ConvertPirAttribute2RuntimeAttribute not support [pir::ArrayAttribute<pir::DoubleAttribute>]  (at ..\paddle\fluid\framework\new_executor\instruction\onednn\onednn_instruction.cc:118)
+
+2026-07-30 00:07:46,579 - parser - ERROR - Page 1: OCR failed: (Unimplemented) ConvertPirAttribute2RuntimeAttribute not support [pir::ArrayAttribute<pir::DoubleAttribute>]  (at ..\paddle\fluid\framework\new_executor\instruction\onednn\onednn_instruction.cc:118)
+
+2026-07-30 00:07:46,584 - parser - WARNING - Page 1: No body words found. Skipping page.
+2026-07-30 00:07:46,593 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:07:46,602 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:07:46,701 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-07-30 00:07:46,706 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 00:07:47,888 - extractor - ERROR - Page 1 PaddleOCR failure: (Unimplemented) ConvertPirAttribute2RuntimeAttribute not support [pir::ArrayAttribute<pir::DoubleAttribute>]  (at ..\paddle\fluid\framework\new_executor\instruction\onednn\onednn_instruction.cc:118)
+
+2026-07-30 00:07:47,889 - parser - ERROR - Page 1: OCR failed: (Unimplemented) ConvertPirAttribute2RuntimeAttribute not support [pir::ArrayAttribute<pir::DoubleAttribute>]  (at ..\paddle\fluid\framework\new_executor\instruction\onednn\onednn_instruction.cc:118)
+
+2026-07-30 00:07:47,892 - parser - WARNING - Page 1: No body words found. Skipping page.
+2026-07-30 00:07:47,892 - verify_app - ERROR - Integration pipeline failure: Expected 30 cards from scanned page, got 0
+Traceback (most recent call last):
+  File "D:\AI WORK\verify_app.py", line 223, in test_pipeline
+    assert len(ocr_blocks_with_conf) == 30, f"Expected 30 cards from scanned page, got {len(ocr_blocks_with_conf)}"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected 30 cards from scanned page, got 0
+2026-07-30 00:12:04,879 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 00:12:04,879 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 00:12:04,908 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-30 00:12:04,908 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-30 00:12:04,909 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-30 00:12:04,910 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 00:12:09,736 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-07-30 00:16:00,831 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 00:16:00,831 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 00:16:01,010 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-30 00:16:01,012 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-30 00:16:01,013 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-30 00:16:01,015 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-07-30 00:16:01,022 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:16:01,030 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:16:01,212 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-07-30 00:16:01,218 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 00:16:13,463 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-07-30 00:27:52,478 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 00:33:57,887 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 00:33:57,887 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 00:33:57,962 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-30 00:33:57,962 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-30 00:33:57,963 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-30 00:33:57,965 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-07-30 00:33:57,972 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:33:57,980 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:33:58,080 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-07-30 00:33:58,085 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 00:34:05,126 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-07-30 00:37:27,308 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 00:37:27,308 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 00:37:27,414 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-30 00:37:27,415 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-30 00:37:27,415 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-30 00:37:27,417 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-07-30 00:37:27,425 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:37:27,433 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:37:27,592 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-07-30 00:37:27,598 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 00:37:43,627 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-07-30 00:42:26,305 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 00:42:26,306 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 00:42:26,382 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-30 00:42:26,383 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-30 00:42:26,383 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-30 00:42:26,385 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-07-30 00:42:26,393 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:42:26,402 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:42:26,510 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-07-30 00:42:26,516 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 00:42:31,396 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-07-30 00:47:31,103 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 00:47:31,103 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 00:47:31,201 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-30 00:47:31,201 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-30 00:47:31,202 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-30 00:47:31,203 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-07-30 00:47:31,212 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:47:31,220 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:47:31,328 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-07-30 00:47:31,334 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 00:47:38,375 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-07-30 00:58:24,948 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 00:58:24,948 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 00:58:25,020 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-30 00:58:25,020 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-30 00:58:25,021 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-30 00:58:25,022 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-07-30 00:58:25,031 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:58:25,039 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 00:58:25,092 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-07-30 00:58:25,094 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 00:58:30,373 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-07-30 01:04:00,638 - extractor - INFO - Page 1: PaddleOCR extracted 194 words.
+2026-07-30 01:04:00,655 - parser - INFO - Page 1: Extracted 26 voter cards. Mode: OCR
+2026-07-30 01:04:00,666 - verify_app - ERROR - Integration pipeline failure: Expected 3 cards from scanned page, got 26
+Traceback (most recent call last):
+  File "D:\AI WORK\verify_app.py", line 224, in test_pipeline
+    assert len(ocr_blocks_with_conf) == 3, f"Expected 3 cards from scanned page, got {len(ocr_blocks_with_conf)}"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected 3 cards from scanned page, got 26
+2026-07-30 22:48:26,095 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 22:48:26,096 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 22:48:26,152 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-30 22:48:26,153 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-30 22:48:26,153 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-30 22:48:26,155 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-07-30 22:48:26,166 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 22:48:26,176 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 22:48:26,232 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-07-30 22:48:26,235 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 22:48:54,956 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-07-30 22:53:28,719 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-30 22:53:28,719 - verify_app - INFO - Executing integration test pipeline...
+2026-07-30 22:53:28,794 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-30 22:53:28,794 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-30 22:53:28,795 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-30 22:53:28,796 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-07-30 22:53:28,804 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 22:53:28,813 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-30 22:53:28,917 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-07-30 22:53:28,923 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-30 22:53:35,986 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-07-31 00:23:12,804 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-31 00:23:30,352 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-31 00:24:50,833 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-31 00:24:50,833 - verify_app - INFO - Executing integration test pipeline...
+2026-07-31 00:24:50,946 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-07-31 00:24:50,946 - verify_app - INFO - Summary extracted elector count: 58
+2026-07-31 00:24:50,947 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-07-31 00:24:50,950 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-07-31 00:24:50,960 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:24:50,970 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:24:51,115 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-07-31 00:24:51,125 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-07-31 00:25:00,660 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-07-31 00:26:36,275 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-31 00:29:29,494 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-31 00:29:54,473 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-31 00:29:54,507 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-31 00:30:28,563 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-31 00:33:22,280 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-31 00:33:23,021 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-31 00:34:29,425 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-07-31 00:34:47,858 - app - INFO - Task f66e44b5-3aaf-4681-b17e-f525ab2efb9f: Starting voter roll conversion pipeline for PDF: AP800011.pdf
+2026-07-31 00:34:47,971 - parser - INFO - PDF D:\AI WORK\uploads\f66e44b5-3aaf-4681-b17e-f525ab2efb9f.pdf opened. Total pages: 15
+2026-07-31 00:34:47,993 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,011 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,030 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,046 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,064 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,081 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,100 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,119 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,136 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,154 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,169 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,188 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,192 - parser - INFO - Page 13: Extracted 22 voter cards. Mode: Searchable
+2026-07-31 00:34:48,209 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,230 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:34:48,268 - excel_export - INFO - Start Excel Export
+2026-07-31 00:34:49,113 - excel_export - INFO - Rows Written: 421
+2026-07-31 00:34:49,114 - excel_export - INFO - Duplicates Removed: 0
+2026-07-31 00:34:49,116 - excel_export - INFO - Export Time: 0.8441s
+2026-07-31 00:34:49,117 - excel_export - INFO - Output File: D:\AI WORK\output\AP800011_voter_details.xlsx
+2026-07-31 00:34:49,122 - app - INFO - Task f66e44b5-3aaf-4681-b17e-f525ab2efb9f Extraction Summary:
+  PDF Name: AP800011.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 422
+  Unique Records Extracted: 422
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-07-31 00:34:49,126 - app - INFO - Task f66e44b5-3aaf-4681-b17e-f525ab2efb9f: Temporary PDF cleared.
+2026-07-31 00:42:05,978 - app - INFO - Task b9f6a85b-176f-4d92-a903-228cf030446e: Starting voter roll conversion pipeline for PDF: AP000116.pdf
+2026-07-31 00:42:06,014 - parser - INFO - PDF D:\AI WORK\uploads\b9f6a85b-176f-4d92-a903-228cf030446e.pdf opened. Total pages: 30
+2026-07-31 00:42:06,034 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,053 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,069 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,086 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,104 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,124 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,140 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,159 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,177 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,194 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,211 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,230 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,250 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,268 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,285 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,303 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,320 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,337 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,356 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,375 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,393 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,411 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,430 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,449 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,466 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,485 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,504 - parser - INFO - Page 27: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,527 - parser - INFO - Page 28: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,549 - parser - INFO - Page 29: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:42:06,553 - parser - INFO - Page 30: Skipped cover/summary page (selectable).
+2026-07-31 00:42:06,728 - excel_export - INFO - Start Excel Export
+2026-07-31 00:42:07,993 - excel_export - INFO - Rows Written: 870
+2026-07-31 00:42:07,994 - excel_export - INFO - Duplicates Removed: 0
+2026-07-31 00:42:07,996 - excel_export - INFO - Export Time: 1.2651s
+2026-07-31 00:42:07,997 - excel_export - INFO - Output File: D:\AI WORK\output\AP000116_voter_details.xlsx
+2026-07-31 00:42:07,998 - app - INFO - Task b9f6a85b-176f-4d92-a903-228cf030446e Extraction Summary:
+  PDF Name: AP000116.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 870
+  Unique Records Extracted: 870
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-07-31 00:42:07,999 - app - INFO - Task b9f6a85b-176f-4d92-a903-228cf030446e: Temporary PDF cleared.
+2026-07-31 00:49:53,289 - app - INFO - Task 67102e2f-ae41-4a3f-a5c7-2d04d2a5588b: Starting voter roll conversion pipeline for PDF: AP800011.pdf
+2026-07-31 00:49:53,337 - parser - INFO - PDF D:\AI WORK\uploads\67102e2f-ae41-4a3f-a5c7-2d04d2a5588b.pdf opened. Total pages: 15
+2026-07-31 00:49:53,360 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,388 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,414 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,436 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,463 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,489 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,517 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,541 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,582 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,622 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,657 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,680 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,686 - parser - INFO - Page 13: Extracted 22 voter cards. Mode: Searchable
+2026-07-31 00:49:53,707 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,734 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-07-31 00:49:53,791 - excel_export - INFO - Start Excel Export
+2026-07-31 00:49:54,759 - excel_export - INFO - Rows Written: 421
+2026-07-31 00:49:54,763 - excel_export - INFO - Duplicates Removed: 0
+2026-07-31 00:49:54,766 - excel_export - INFO - Export Time: 0.9677s
+2026-07-31 00:49:54,766 - excel_export - INFO - Output File: D:\AI WORK\output\AP800011_voter_details_1.xlsx
+2026-07-31 00:49:54,770 - app - INFO - Task 67102e2f-ae41-4a3f-a5c7-2d04d2a5588b Extraction Summary:
+  PDF Name: AP800011.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 422
+  Unique Records Extracted: 422
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-07-31 00:49:54,775 - app - INFO - Task 67102e2f-ae41-4a3f-a5c7-2d04d2a5588b: Temporary PDF cleared.
+2026-08-04 08:48:38,650 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-04 08:54:34,573 - app - INFO - Task fb85f5e7-1ba4-406b-b35e-7a7c35ff5839: Starting voter roll conversion pipeline for PDF: AP800012.pdf
+2026-08-04 08:54:34,960 - parser - INFO - PDF D:\AI WORK\uploads\fb85f5e7-1ba4-406b-b35e-7a7c35ff5839.pdf opened. Total pages: 7
+2026-08-04 08:54:35,012 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-04 08:54:35,051 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-04 08:54:35,093 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-04 08:54:35,141 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-04 08:54:35,193 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-04 08:54:35,237 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-04 08:54:35,280 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-04 08:54:35,349 - excel_export - INFO - Start Excel Export
+2026-08-04 08:54:36,409 - excel_export - INFO - Rows Written: 210
+2026-08-04 08:54:36,411 - excel_export - INFO - Duplicates Removed: 0
+2026-08-04 08:54:36,413 - excel_export - INFO - Export Time: 1.0569s
+2026-08-04 08:54:36,415 - excel_export - INFO - Output File: D:\AI WORK\output\AP800012_voter_details.xlsx
+2026-08-04 08:54:36,424 - app - INFO - Task fb85f5e7-1ba4-406b-b35e-7a7c35ff5839 Extraction Summary:
+  PDF Name: AP800012.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 210
+  Unique Records Extracted: 210
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-04 08:54:36,434 - app - INFO - Task fb85f5e7-1ba4-406b-b35e-7a7c35ff5839: Temporary PDF cleared.
+2026-08-05 20:43:34,177 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-05 20:47:52,825 - app - INFO - Task a364d571-4759-4310-ba8f-c15ef751ae8d: Starting voter roll conversion pipeline for PDF: AP900012.pdf
+2026-08-05 20:47:52,956 - parser - INFO - PDF D:\AI WORK\uploads\a364d571-4759-4310-ba8f-c15ef751ae8d.pdf opened. Total pages: 34
+2026-08-05 20:47:52,973 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:52,989 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,005 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,018 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,045 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,058 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,072 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,086 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,100 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,112 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,125 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,139 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,152 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,167 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,184 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,198 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,212 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,225 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,238 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,249 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,261 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,274 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,287 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,301 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,312 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,324 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,340 - parser - INFO - Page 27: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,353 - parser - INFO - Page 28: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,368 - parser - INFO - Page 29: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,381 - parser - INFO - Page 30: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,394 - parser - INFO - Page 31: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,406 - parser - INFO - Page 32: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,421 - parser - INFO - Page 33: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:47:53,427 - parser - INFO - Page 34: Extracted 27 voter cards. Mode: Searchable
+2026-08-05 20:47:53,494 - excel_export - INFO - Start Excel Export
+2026-08-05 20:47:54,809 - excel_export - INFO - Rows Written: 998
+2026-08-05 20:47:54,814 - excel_export - INFO - Duplicates Removed: 0
+2026-08-05 20:47:54,815 - excel_export - INFO - Export Time: 1.3144s
+2026-08-05 20:47:54,817 - excel_export - INFO - Output File: D:\AI WORK\output\AP900012_voter_details.xlsx
+2026-08-05 20:47:54,826 - app - INFO - Task a364d571-4759-4310-ba8f-c15ef751ae8d Extraction Summary:
+  PDF Name: AP900012.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 998
+  Unique Records Extracted: 998
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-05 20:47:54,831 - app - INFO - Task a364d571-4759-4310-ba8f-c15ef751ae8d: Temporary PDF cleared.
+2026-08-05 20:52:53,143 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-05 20:52:53,143 - verify_app - INFO - Executing integration test pipeline...
+2026-08-05 20:52:53,174 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-08-05 20:52:53,174 - verify_app - INFO - Summary extracted elector count: 58
+2026-08-05 20:52:53,175 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-08-05 20:52:53,176 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-08-05 20:52:53,184 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:52:53,193 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:52:53,318 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-08-05 20:52:53,325 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-08-05 20:53:22,834 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-08-05 20:57:24,325 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-05 20:57:44,227 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-05 20:57:44,227 - verify_app - INFO - Executing integration test pipeline...
+2026-08-05 20:57:44,334 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-08-05 20:57:44,335 - verify_app - INFO - Summary extracted elector count: 58
+2026-08-05 20:57:44,336 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-08-05 20:57:44,353 - parser - INFO - Global grid calibrated from page: x=36.0..576.0, y=60.4..740.0, col_w=180.0, row_h=68.0
+2026-08-05 20:57:44,353 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-08-05 20:57:44,363 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:57:44,381 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 20:57:44,545 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-08-05 20:57:44,555 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-08-05 20:57:54,040 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-08-05 21:10:04,096 - app - INFO - Task 5257596b-f230-43cf-9e18-a64cd67f1fc8: Starting voter roll conversion pipeline for PDF: AP900012.pdf
+2026-08-05 21:10:04,252 - parser - INFO - PDF D:\AI WORK\uploads\5257596b-f230-43cf-9e18-a64cd67f1fc8.pdf opened. Total pages: 34
+2026-08-05 21:10:04,532 - parser - INFO - Global grid calibrated from page: x=14.0..521.4, y=59.5..780.5, col_w=169.1, row_h=72.1
+2026-08-05 21:10:04,561 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,580 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,612 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,636 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,653 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,666 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,686 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,715 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,742 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,756 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,771 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,789 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,805 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,819 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,837 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,858 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,874 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,890 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,911 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,929 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,946 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,966 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:04,984 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:05,000 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:05,016 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:05,035 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:05,054 - parser - INFO - Page 27: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:05,070 - parser - INFO - Page 28: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:05,086 - parser - INFO - Page 29: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:05,105 - parser - INFO - Page 30: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:05,131 - parser - INFO - Page 31: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:05,156 - parser - INFO - Page 32: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:05,184 - parser - INFO - Page 33: Extracted 30 voter cards. Mode: Searchable
+2026-08-05 21:10:05,191 - parser - INFO - Page 34: Extracted 8 voter cards. Mode: Searchable
+2026-08-05 21:10:05,278 - excel_export - INFO - Start Excel Export
+2026-08-05 21:10:06,915 - excel_export - INFO - Rows Written: 998
+2026-08-05 21:10:06,916 - excel_export - INFO - Duplicates Removed: 0
+2026-08-05 21:10:06,916 - excel_export - INFO - Export Time: 1.6346s
+2026-08-05 21:10:06,917 - excel_export - INFO - Output File: D:\AI WORK\output\AP900012_voter_details_1.xlsx
+2026-08-05 21:10:06,921 - app - INFO - Task 5257596b-f230-43cf-9e18-a64cd67f1fc8 Extraction Summary:
+  PDF Name: AP900012.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 998
+  Unique Records Extracted: 998
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-05 21:10:06,923 - app - INFO - Task 5257596b-f230-43cf-9e18-a64cd67f1fc8: Temporary PDF cleared.
+2026-08-12 08:08:09,144 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-12 08:12:42,307 - app - INFO - Task dc0c1b14-e7af-4efd-a041-3c655054a1dd: Starting voter roll conversion pipeline for PDF: AP000118.pdf
+2026-08-12 08:12:42,663 - parser - INFO - PDF D:\AI WORK\uploads\dc0c1b14-e7af-4efd-a041-3c655054a1dd.pdf opened. Total pages: 29
+2026-08-12 08:12:43,617 - parser - INFO - Global grid calibrated from page: x=21.8..507.6, y=60.6..774.6, col_w=161.9, row_h=71.4
+2026-08-12 08:12:43,671 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:43,731 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:43,795 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:43,919 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:44,048 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:44,120 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:44,205 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:44,258 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:44,320 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:44,430 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:44,609 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:44,775 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:44,868 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:44,971 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:45,068 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:45,147 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:45,267 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:45,367 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:45,444 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:45,511 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:45,576 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:45,633 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:45,716 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:45,777 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:45,827 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:45,897 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:12:45,934 - parser - INFO - Page 27: Extracted 14 voter cards. Mode: Searchable
+2026-08-12 08:12:45,954 - parser - INFO - Page 28: Extracted 2 voter cards. Mode: Searchable
+2026-08-12 08:12:46,019 - parser - INFO - Page 29: Extracted 17 voter cards. Mode: Searchable
+2026-08-12 08:12:46,233 - excel_export - INFO - Start Excel Export
+2026-08-12 08:12:50,710 - excel_export - INFO - Rows Written: 813
+2026-08-12 08:12:50,714 - excel_export - INFO - Duplicates Removed: 0
+2026-08-12 08:12:50,721 - excel_export - INFO - Export Time: 4.4764s
+2026-08-12 08:12:50,731 - excel_export - INFO - Output File: D:\AI WORK\output\AP000118_voter_details.xlsx
+2026-08-12 08:12:50,761 - app - INFO - Task dc0c1b14-e7af-4efd-a041-3c655054a1dd Extraction Summary:
+  PDF Name: AP000118.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 813
+  Unique Records Extracted: 813
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-12 08:12:50,776 - app - INFO - Task dc0c1b14-e7af-4efd-a041-3c655054a1dd: Temporary PDF cleared.
+2026-08-12 08:20:47,755 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-12 08:22:19,193 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-12 08:23:03,115 - app - INFO - Task 9f4008aa-b12b-4638-9786-23f6c92fbadd: Starting voter roll conversion pipeline for PDF: AP000118.pdf
+2026-08-12 08:23:03,169 - parser - INFO - PDF D:\AI WORK\uploads\9f4008aa-b12b-4638-9786-23f6c92fbadd.pdf opened. Total pages: 29
+2026-08-12 08:23:03,378 - parser - INFO - Global grid calibrated from page: x=21.8..507.6, y=60.6..774.6, col_w=161.9, row_h=71.4
+2026-08-12 08:23:03,389 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,403 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,418 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,431 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,445 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,459 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,473 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,490 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,507 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,524 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,541 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,561 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,576 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,590 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,606 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,619 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,632 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,643 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,656 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,670 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,684 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,703 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,721 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,735 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,750 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,762 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:23:03,771 - parser - INFO - Page 27: Extracted 14 voter cards. Mode: Searchable
+2026-08-12 08:23:03,776 - parser - INFO - Page 28: Extracted 2 voter cards. Mode: Searchable
+2026-08-12 08:23:03,782 - parser - INFO - Page 29: Extracted 17 voter cards. Mode: Searchable
+2026-08-12 08:23:03,843 - excel_export - INFO - Start Excel Export
+2026-08-12 08:23:04,687 - excel_export - INFO - Rows Written: 813
+2026-08-12 08:23:04,688 - excel_export - INFO - Duplicates Removed: 0
+2026-08-12 08:23:04,688 - excel_export - INFO - Export Time: 0.8430s
+2026-08-12 08:23:04,688 - excel_export - INFO - Output File: D:\AI WORK\output\AP000118_voter_details_1.xlsx
+2026-08-12 08:23:04,691 - app - INFO - Task 9f4008aa-b12b-4638-9786-23f6c92fbadd Extraction Summary:
+  PDF Name: AP000118.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 813
+  Unique Records Extracted: 813
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-12 08:23:04,692 - app - INFO - Task 9f4008aa-b12b-4638-9786-23f6c92fbadd: Temporary PDF cleared.
+2026-08-12 08:27:42,988 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-12 08:28:48,378 - app - INFO - Task f1101718-cb52-4bb7-b709-453c5bba8e70: Starting voter roll conversion pipeline for PDF: AP000118.pdf
+2026-08-12 08:28:48,413 - parser - INFO - PDF D:\AI WORK\uploads\f1101718-cb52-4bb7-b709-453c5bba8e70.pdf opened. Total pages: 29
+2026-08-12 08:28:48,574 - parser - INFO - Global grid calibrated from page: x=21.8..507.6, y=60.6..774.6, col_w=161.9, row_h=71.4
+2026-08-12 08:28:48,585 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,598 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,612 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,623 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,636 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,650 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,664 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,678 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,691 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,704 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,715 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,728 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,740 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,752 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,766 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,775 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,786 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,800 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,813 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,827 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,840 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,851 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,862 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,877 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,891 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,904 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-08-12 08:28:48,910 - parser - INFO - Page 27: Extracted 14 voter cards. Mode: Searchable
+2026-08-12 08:28:48,912 - parser - INFO - Page 28: Extracted 2 voter cards. Mode: Searchable
+2026-08-12 08:28:48,921 - parser - INFO - Page 29: Extracted 17 voter cards. Mode: Searchable
+2026-08-12 08:28:49,347 - excel_export - INFO - Start Excel Export
+2026-08-12 08:28:50,139 - excel_export - INFO - Rows Written: 813
+2026-08-12 08:28:50,139 - excel_export - INFO - Duplicates Removed: 0
+2026-08-12 08:28:50,140 - excel_export - INFO - Export Time: 0.7914s
+2026-08-12 08:28:50,140 - excel_export - INFO - Output File: D:\AI WORK\output\AP000118_voter_details_2.xlsx
+2026-08-12 08:28:50,142 - app - INFO - Task f1101718-cb52-4bb7-b709-453c5bba8e70 Extraction Summary:
+  PDF Name: AP000118.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 813
+  Unique Records Extracted: 813
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-12 08:28:50,143 - app - INFO - Task f1101718-cb52-4bb7-b709-453c5bba8e70: Temporary PDF cleared.
+2026-08-13 20:34:23,817 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-13 20:35:46,946 - app - INFO - Task fecef696-f45e-4ef9-872d-9eeb696d473d: Starting voter roll conversion pipeline for PDF: AP800015.pdf
+2026-08-13 20:35:47,075 - parser - INFO - PDF D:\AI WORK\uploads\fecef696-f45e-4ef9-872d-9eeb696d473d.pdf opened. Total pages: 21
+2026-08-13 20:35:47,222 - parser - INFO - Global grid calibrated from page: x=14.0..519.6, y=59.4..780.4, col_w=168.5, row_h=72.1
+2026-08-13 20:35:47,232 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,242 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,252 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,264 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,274 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,285 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,295 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,306 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,316 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,327 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,338 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,348 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,358 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,369 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,379 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,389 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,399 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,410 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,420 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:35:47,423 - parser - INFO - Page 20: Extracted 4 voter cards. Mode: Searchable
+2026-08-13 20:35:47,426 - parser - INFO - Page 21: Extracted 14 voter cards. Mode: Searchable
+2026-08-13 20:35:47,741 - excel_export - INFO - Start Excel Export
+2026-08-13 20:35:48,335 - excel_export - INFO - Rows Written: 576
+2026-08-13 20:35:48,336 - excel_export - INFO - Duplicates Removed: 0
+2026-08-13 20:35:48,336 - excel_export - INFO - Export Time: 0.5942s
+2026-08-13 20:35:48,336 - excel_export - INFO - Output File: D:\AI WORK\output\AP800015_voter_details.xlsx
+2026-08-13 20:35:48,340 - app - INFO - Task fecef696-f45e-4ef9-872d-9eeb696d473d Extraction Summary:
+  PDF Name: AP800015.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 576
+  Unique Records Extracted: 576
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-13 20:35:48,340 - app - INFO - Task fecef696-f45e-4ef9-872d-9eeb696d473d: Temporary PDF cleared.
+2026-08-13 20:36:13,117 - app - INFO - Task 70c5be5a-19c2-45fa-9e88-5f94dcb78933: Starting voter roll conversion pipeline for PDF: AP800015.pdf
+2026-08-13 20:36:13,151 - parser - INFO - PDF D:\AI WORK\uploads\70c5be5a-19c2-45fa-9e88-5f94dcb78933.pdf opened. Total pages: 21
+2026-08-13 20:36:13,280 - parser - INFO - Global grid calibrated from page: x=14.0..519.6, y=59.4..780.4, col_w=168.5, row_h=72.1
+2026-08-13 20:36:13,295 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,307 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,320 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,332 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,343 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,355 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,367 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,378 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,389 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,400 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,411 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,423 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,434 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,445 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,457 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,468 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,479 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,490 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,501 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 20:36:13,505 - parser - INFO - Page 20: Extracted 4 voter cards. Mode: Searchable
+2026-08-13 20:36:13,509 - parser - INFO - Page 21: Extracted 14 voter cards. Mode: Searchable
+2026-08-13 20:36:13,837 - excel_export - INFO - Start Excel Export
+2026-08-13 20:36:14,468 - excel_export - INFO - Rows Written: 576
+2026-08-13 20:36:14,469 - excel_export - INFO - Duplicates Removed: 0
+2026-08-13 20:36:14,469 - excel_export - INFO - Export Time: 0.6313s
+2026-08-13 20:36:14,469 - excel_export - INFO - Output File: D:\AI WORK\output\AP800015_voter_details_1.xlsx
+2026-08-13 20:36:14,471 - app - INFO - Task 70c5be5a-19c2-45fa-9e88-5f94dcb78933 Extraction Summary:
+  PDF Name: AP800015.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 576
+  Unique Records Extracted: 576
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-13 20:36:14,472 - app - INFO - Task 70c5be5a-19c2-45fa-9e88-5f94dcb78933: Temporary PDF cleared.
+2026-08-13 20:42:15,710 - app - INFO - Task 616d2e07-2411-4a05-b429-0351e3d23c8c: Starting voter roll conversion pipeline for PDF: AP800015.pdf
+2026-08-13 20:42:51,708 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-08-13 21:42:26,152 - extractor - INFO - Page 2: PaddleOCR extracted 151 words.
+2026-08-13 21:42:26,282 - parser - INFO - PDF D:\AI WORK\uploads\616d2e07-2411-4a05-b429-0351e3d23c8c.pdf opened. Total pages: 26
+2026-08-13 21:42:26,417 - parser - INFO - Global grid calibrated from page: x=14.0..519.6, y=59.4..780.4, col_w=168.5, row_h=72.1
+2026-08-13 21:42:26,418 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-08-13 21:42:26,419 - parser - INFO - Page 2: Skipped cover/summary page (selectable).
+2026-08-13 21:42:26,429 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,438 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,447 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,454 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,462 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,472 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,482 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,492 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,502 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,510 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,518 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,528 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,537 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,546 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,554 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,562 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,570 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,579 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,587 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-13 21:42:26,590 - parser - INFO - Page 22: Extracted 4 voter cards. Mode: Searchable
+2026-08-13 21:42:26,593 - parser - INFO - Page 23: Extracted 14 voter cards. Mode: Searchable
+2026-08-13 21:42:26,595 - parser - INFO - Page 24: Extracted 5 voter cards. Mode: Searchable
+2026-08-13 21:42:26,597 - parser - INFO - Page 25: Extracted 4 voter cards. Mode: Searchable
+2026-08-13 21:42:26,598 - parser - INFO - Page 26: Skipped cover/summary page (selectable).
+2026-08-13 21:42:26,852 - app - INFO - Task 616d2e07-2411-4a05-b429-0351e3d23c8c: Removing duplicate record for EPIC AP010050102262
+2026-08-13 21:42:26,853 - app - INFO - Task 616d2e07-2411-4a05-b429-0351e3d23c8c: Removing duplicate record for EPIC IQV0300848
+2026-08-13 21:42:26,854 - excel_export - INFO - Start Excel Export
+2026-08-13 21:42:27,393 - excel_export - INFO - Rows Written: 576
+2026-08-13 21:42:27,394 - excel_export - INFO - Duplicates Removed: 0
+2026-08-13 21:42:27,394 - excel_export - INFO - Export Time: 0.5395s
+2026-08-13 21:42:27,394 - excel_export - INFO - Output File: D:\AI WORK\output\AP800015_voter_details_2.xlsx
+2026-08-13 21:42:27,400 - app - INFO - Task 616d2e07-2411-4a05-b429-0351e3d23c8c Extraction Summary:
+  PDF Name: AP800015.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 578
+  Unique Records Extracted: 576
+  Duplicates Removed: 2
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-13 21:42:27,400 - app - INFO - Task 616d2e07-2411-4a05-b429-0351e3d23c8c: Temporary PDF cleared.
+2026-08-14 22:10:13,811 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-14 22:13:30,489 - app - INFO - Task 72783262-9f3b-4c8e-ad7c-0125e6c51c0b: Starting voter roll conversion pipeline for PDF: AP000119.pdf
+2026-08-14 22:13:30,646 - parser - INFO - PDF D:\AI WORK\uploads\72783262-9f3b-4c8e-ad7c-0125e6c51c0b.pdf opened. Total pages: 14
+2026-08-14 22:13:30,744 - parser - INFO - Global grid calibrated from page: x=21.2..504.5, y=60.6..774.6, col_w=161.1, row_h=71.4
+2026-08-14 22:13:30,758 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-14 22:13:30,769 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-14 22:13:30,780 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-14 22:13:30,795 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-14 22:13:30,808 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-14 22:13:30,821 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-14 22:13:30,833 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-14 22:13:30,845 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-14 22:13:30,857 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-14 22:13:30,869 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-14 22:13:30,880 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-14 22:13:30,890 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-14 22:13:30,902 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-14 22:13:30,909 - parser - INFO - Page 14: Extracted 12 voter cards. Mode: Searchable
+2026-08-14 22:13:31,178 - excel_export - INFO - Start Excel Export
+2026-08-14 22:13:31,697 - excel_export - INFO - Rows Written: 402
+2026-08-14 22:13:31,697 - excel_export - INFO - Duplicates Removed: 0
+2026-08-14 22:13:31,697 - excel_export - INFO - Export Time: 0.5188s
+2026-08-14 22:13:31,697 - excel_export - INFO - Output File: D:\AI WORK\output\AP000119_voter_details.xlsx
+2026-08-14 22:13:31,700 - app - INFO - Task 72783262-9f3b-4c8e-ad7c-0125e6c51c0b Extraction Summary:
+  PDF Name: AP000119.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 402
+  Unique Records Extracted: 402
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-14 22:13:31,701 - app - INFO - Task 72783262-9f3b-4c8e-ad7c-0125e6c51c0b: Temporary PDF cleared.
+2026-08-18 19:49:57,314 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-18 19:49:57,315 - verify_app - INFO - Executing integration test pipeline...
+2026-08-18 19:49:57,419 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-08-18 19:49:57,420 - verify_app - INFO - Summary extracted elector count: 58
+2026-08-18 19:49:57,421 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-08-18 19:49:57,437 - parser - INFO - Global grid calibrated from page: x=36.0..576.0, y=60.4..740.0, col_w=180.0, row_h=68.0
+2026-08-18 19:49:57,438 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-08-18 19:49:57,452 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:49:57,467 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:49:57,698 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-08-18 19:49:57,709 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-08-18 19:49:57,812 - extractor - ERROR - Failed to initialize PaddleOCR engine: No module named 'paddleocr'
+2026-08-18 19:49:57,812 - extractor - ERROR - Page 1 PaddleOCR failure: No module named 'paddleocr'
+2026-08-18 19:49:57,812 - parser - ERROR - Page 1: OCR failed: No module named 'paddleocr'
+2026-08-18 19:49:57,813 - parser - WARNING - Page 1: No body words found. Skipping page.
+2026-08-18 19:49:57,813 - verify_app - ERROR - Integration pipeline failure: Expected 30 cards from scanned page, got 0
+Traceback (most recent call last):
+  File "D:\AI WORK\verify_app.py", line 223, in test_pipeline
+    assert len(ocr_blocks_with_conf) == 30, f"Expected 30 cards from scanned page, got {len(ocr_blocks_with_conf)}"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected 30 cards from scanned page, got 0
+2026-08-18 19:50:17,807 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-18 19:50:17,807 - verify_app - INFO - Executing integration test pipeline...
+2026-08-18 19:50:17,861 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-08-18 19:50:17,862 - verify_app - INFO - Summary extracted elector count: 58
+2026-08-18 19:50:17,863 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-08-18 19:50:17,872 - parser - INFO - Global grid calibrated from page: x=36.0..576.0, y=60.4..740.0, col_w=180.0, row_h=68.0
+2026-08-18 19:50:17,873 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-08-18 19:50:17,881 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:50:17,893 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:50:18,031 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-08-18 19:50:18,037 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-08-18 19:50:49,985 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-08-18 19:53:02,937 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-18 19:53:35,246 - app - INFO - Task 0caeffb1-0b1e-46d0-bdfd-ecb05c2832b4: Starting voter roll conversion pipeline for PDF: AP500011.pdf
+2026-08-18 19:53:35,359 - parser - INFO - PDF D:\AI WORK\uploads\0caeffb1-0b1e-46d0-bdfd-ecb05c2832b4.pdf opened. Total pages: 42
+2026-08-18 19:53:35,673 - parser - INFO - Global grid calibrated from page: x=14.0..520.2, y=59.5..780.5, col_w=168.7, row_h=72.1
+2026-08-18 19:53:35,691 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,724 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,745 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,765 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,779 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,800 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,816 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,841 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,860 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,879 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,905 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,925 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,953 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,976 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:35,999 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,016 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,044 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,057 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,080 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,096 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,120 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,140 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,159 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,176 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,201 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,217 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,239 - parser - INFO - Page 27: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,260 - parser - INFO - Page 28: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,286 - parser - INFO - Page 29: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,308 - parser - INFO - Page 30: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,329 - parser - INFO - Page 31: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,344 - parser - INFO - Page 32: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,363 - parser - INFO - Page 33: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,384 - parser - INFO - Page 34: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,399 - parser - INFO - Page 35: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,418 - parser - INFO - Page 36: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,432 - parser - INFO - Page 37: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,453 - parser - INFO - Page 38: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,479 - parser - INFO - Page 39: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:53:36,482 - parser - INFO - Page 40: Extracted 4 voter cards. Mode: Searchable
+2026-08-18 19:53:36,501 - parser - INFO - Page 41: Extracted 15 voter cards. Mode: Searchable
+2026-08-18 19:53:36,521 - parser - INFO - Page 42: Extracted 29 voter cards. Mode: Searchable
+2026-08-18 19:53:37,871 - excel_export - INFO - Start Excel Export
+2026-08-18 19:53:41,075 - excel_export - INFO - Rows Written: 1206
+2026-08-18 19:53:41,075 - excel_export - INFO - Duplicates Removed: 0
+2026-08-18 19:53:41,075 - excel_export - INFO - Export Time: 3.2037s
+2026-08-18 19:53:41,076 - excel_export - INFO - Output File: D:\AI WORK\output\AP500011_voter_details.xlsx
+2026-08-18 19:53:41,078 - app - INFO - Task 0caeffb1-0b1e-46d0-bdfd-ecb05c2832b4 Extraction Summary:
+  PDF Name: AP500011.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 1207
+  Unique Records Extracted: 1207
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-18 19:53:41,078 - app - INFO - Task 0caeffb1-0b1e-46d0-bdfd-ecb05c2832b4: Temporary PDF cleared.
+2026-08-18 19:55:02,105 - app - INFO - Task 28a3c8ad-b0dd-436e-a7fe-6ae3246053f3: Starting voter roll conversion pipeline for PDF: AP500011 (1).pdf
+2026-08-18 19:55:02,148 - parser - INFO - PDF D:\AI WORK\uploads\28a3c8ad-b0dd-436e-a7fe-6ae3246053f3.pdf opened. Total pages: 41
+2026-08-18 19:55:02,537 - parser - INFO - Global grid calibrated from page: x=14.0..520.2, y=59.5..780.5, col_w=168.7, row_h=72.1
+2026-08-18 19:55:02,558 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,580 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,607 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,628 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,652 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,667 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,689 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,708 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,731 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,746 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,760 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,774 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,801 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,829 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,857 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,879 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,905 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,924 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,949 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,974 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:02,995 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,025 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,055 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,080 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,115 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,141 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,163 - parser - INFO - Page 27: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,182 - parser - INFO - Page 28: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,208 - parser - INFO - Page 29: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,232 - parser - INFO - Page 30: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,253 - parser - INFO - Page 31: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,274 - parser - INFO - Page 32: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,295 - parser - INFO - Page 33: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,320 - parser - INFO - Page 34: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,340 - parser - INFO - Page 35: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,363 - parser - INFO - Page 36: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,389 - parser - INFO - Page 37: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,417 - parser - INFO - Page 38: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,439 - parser - INFO - Page 39: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 19:55:03,446 - parser - INFO - Page 40: Extracted 4 voter cards. Mode: Searchable
+2026-08-18 19:55:03,455 - parser - INFO - Page 41: Extracted 15 voter cards. Mode: Searchable
+2026-08-18 19:55:04,638 - excel_export - INFO - Start Excel Export
+2026-08-18 19:55:06,288 - excel_export - INFO - Rows Written: 1189
+2026-08-18 19:55:06,288 - excel_export - INFO - Duplicates Removed: 0
+2026-08-18 19:55:06,289 - excel_export - INFO - Export Time: 1.6499s
+2026-08-18 19:55:06,289 - excel_export - INFO - Output File: D:\AI WORK\output\AP500011 (1)_voter_details.xlsx
+2026-08-18 19:55:06,293 - app - INFO - Task 28a3c8ad-b0dd-436e-a7fe-6ae3246053f3 Extraction Summary:
+  PDF Name: AP500011 (1).pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 1189
+  Unique Records Extracted: 1189
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-18 19:55:06,294 - app - INFO - Task 28a3c8ad-b0dd-436e-a7fe-6ae3246053f3: Temporary PDF cleared.
+2026-08-18 19:55:55,487 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-18 19:56:35,900 - app - INFO - Task 5751d40a-45b6-40e8-ac00-66495f8eda6e: Starting voter roll conversion pipeline for PDF: AP500011 (2).pdf
+2026-08-18 19:56:35,923 - parser - INFO - Summary Page: Parsed declared total electors count = 12
+2026-08-18 19:56:35,924 - parser - INFO - PDF D:\AI WORK\uploads\5751d40a-45b6-40e8-ac00-66495f8eda6e.pdf opened. Total pages: 5
+2026-08-18 19:56:35,934 - parser - INFO - Global grid calibrated from page: x=16.9..535.2, y=89.7..794.2, col_w=172.8, row_h=70.5
+2026-08-18 19:56:35,941 - parser - INFO - Page 1: Extracted 27 voter cards. Mode: Searchable
+2026-08-18 19:56:35,942 - parser - INFO - Page 2: Skipped cover/summary page (selectable).
+2026-08-18 19:56:35,943 - parser - INFO - Page 3: Extracted 7 voter cards. Mode: Searchable
+2026-08-18 19:56:35,945 - parser - INFO - Page 4: Extracted 5 voter cards. Mode: Searchable
+2026-08-18 19:56:35,946 - parser - INFO - Page 5: Skipped cover/summary page (selectable).
+2026-08-18 19:56:35,970 - app - WARNING - Task 5751d40a-45b6-40e8-ac00-66495f8eda6e: Warning: Elector count mismatch! PDF summary lists 12 electors, but we extracted 18 unique records.
+2026-08-18 19:56:35,971 - excel_export - INFO - Start Excel Export
+2026-08-18 19:56:36,004 - excel_export - INFO - Rows Written: 2
+2026-08-18 19:56:36,004 - excel_export - INFO - Duplicates Removed: 0
+2026-08-18 19:56:36,004 - excel_export - INFO - Export Time: 0.0321s
+2026-08-18 19:56:36,004 - excel_export - INFO - Output File: D:\AI WORK\output\AP500011 (2)_voter_details.xlsx
+2026-08-18 19:56:36,006 - app - INFO - Task 5751d40a-45b6-40e8-ac00-66495f8eda6e Extraction Summary:
+  PDF Name: AP500011 (2).pdf
+  Declared Electors Count: 12
+  Total Cards Parsed: 18
+  Unique Records Extracted: 18
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: Warning: Elector count mismatch! PDF summary lists 12 electors, but we extracted 18 unique records.
+2026-08-18 19:56:36,007 - app - INFO - Task 5751d40a-45b6-40e8-ac00-66495f8eda6e: Temporary PDF cleared.
+2026-08-18 20:05:19,058 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-18 20:05:19,848 - verify_app - INFO - Executing integration test pipeline...
+2026-08-18 20:05:19,898 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-08-18 20:05:19,898 - verify_app - INFO - Summary extracted elector count: 58
+2026-08-18 20:05:19,899 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-08-18 20:05:19,907 - parser - INFO - Global grid calibrated from page: x=36.0..576.0, y=60.4..740.0, col_w=180.0, row_h=68.0
+2026-08-18 20:05:19,908 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-08-18 20:05:19,915 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:05:19,925 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:05:20,055 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-08-18 20:05:20,061 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-08-18 20:05:20,118 - extractor - ERROR - Failed to initialize PaddleOCR engine: No module named 'paddleocr'
+2026-08-18 20:05:20,118 - extractor - ERROR - Page 1 PaddleOCR failure: No module named 'paddleocr'
+2026-08-18 20:05:20,118 - parser - ERROR - Page 1: OCR failed: No module named 'paddleocr'
+2026-08-18 20:05:20,119 - parser - WARNING - Page 1: No body words found. Skipping page.
+2026-08-18 20:05:20,119 - verify_app - ERROR - Integration pipeline failure: Expected 30 cards from scanned page, got 0
+Traceback (most recent call last):
+  File "D:\AI WORK\verify_app.py", line 222, in test_pipeline
+    assert len(ocr_blocks_with_conf) == 30, f"Expected 30 cards from scanned page, got {len(ocr_blocks_with_conf)}"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected 30 cards from scanned page, got 0
+2026-08-18 20:05:31,682 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-18 20:05:32,125 - verify_app - INFO - Executing integration test pipeline...
+2026-08-18 20:05:32,167 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-08-18 20:05:32,167 - verify_app - INFO - Summary extracted elector count: 58
+2026-08-18 20:05:32,168 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-08-18 20:05:32,177 - parser - INFO - Global grid calibrated from page: x=36.0..576.0, y=60.4..740.0, col_w=180.0, row_h=68.0
+2026-08-18 20:05:32,177 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-08-18 20:05:32,185 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:05:32,196 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:05:32,356 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-08-18 20:05:32,363 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-08-18 20:05:42,926 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-08-18 20:06:26,810 - app - INFO - Task de863665-265f-44e0-ac53-39b49fa606b8: Starting voter roll conversion pipeline for PDF: AP500011.pdf
+2026-08-18 20:06:26,849 - parser - INFO - PDF D:\AI WORK\uploads\de863665-265f-44e0-ac53-39b49fa606b8.pdf opened. Total pages: 42
+2026-08-18 20:06:27,054 - parser - INFO - Global grid calibrated from page: x=14.0..520.2, y=59.5..780.5, col_w=168.7, row_h=72.1
+2026-08-18 20:06:27,064 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,075 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,085 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,094 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,103 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,112 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,122 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,131 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,142 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,151 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,163 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,177 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,187 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,199 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,211 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,222 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,233 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,242 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,253 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,263 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,274 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,283 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,293 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,303 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,312 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,323 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,331 - parser - INFO - Page 27: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,340 - parser - INFO - Page 28: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,349 - parser - INFO - Page 29: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,358 - parser - INFO - Page 30: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,367 - parser - INFO - Page 31: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,376 - parser - INFO - Page 32: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,385 - parser - INFO - Page 33: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,394 - parser - INFO - Page 34: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,406 - parser - INFO - Page 35: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,415 - parser - INFO - Page 36: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,426 - parser - INFO - Page 37: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,436 - parser - INFO - Page 38: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,446 - parser - INFO - Page 39: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:06:27,448 - parser - INFO - Page 40: Extracted 4 voter cards. Mode: Searchable
+2026-08-18 20:06:27,454 - parser - INFO - Page 41: Extracted 15 voter cards. Mode: Searchable
+2026-08-18 20:06:27,463 - parser - INFO - Page 42: Extracted 29 voter cards. Mode: Searchable
+2026-08-18 20:06:28,076 - excel_export - INFO - Start Excel Export
+2026-08-18 20:06:29,174 - excel_export - INFO - Rows Written: 1206
+2026-08-18 20:06:29,175 - excel_export - INFO - Duplicates Removed: 0
+2026-08-18 20:06:29,175 - excel_export - INFO - Export Time: 1.0975s
+2026-08-18 20:06:29,175 - excel_export - INFO - Output File: D:\AI WORK\output\AP500011_voter_details_1.xlsx
+2026-08-18 20:06:29,179 - app - INFO - Task de863665-265f-44e0-ac53-39b49fa606b8 Extraction Summary:
+  PDF Name: AP500011.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 1207
+  Unique Records Extracted: 1207
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-18 20:06:29,179 - app - INFO - Task de863665-265f-44e0-ac53-39b49fa606b8: Temporary PDF cleared.
+2026-08-18 20:07:08,561 - app - INFO - Task 6049e110-0bc2-4edc-9fd0-b2f60946d169: Starting voter roll conversion pipeline for PDF: AP500011.pdf
+2026-08-18 20:07:08,595 - parser - INFO - PDF D:\AI WORK\uploads\6049e110-0bc2-4edc-9fd0-b2f60946d169.pdf opened. Total pages: 42
+2026-08-18 20:07:08,853 - parser - INFO - Global grid calibrated from page: x=14.0..520.2, y=59.5..780.5, col_w=168.7, row_h=72.1
+2026-08-18 20:07:08,863 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:08,874 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:08,888 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:08,901 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:08,916 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:08,929 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:08,939 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:08,951 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:08,963 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:08,974 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:08,985 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:08,996 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,006 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,017 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,031 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,045 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,058 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,070 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,081 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,092 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,103 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,115 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,125 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,136 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,147 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,165 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,198 - parser - INFO - Page 27: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,236 - parser - INFO - Page 28: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,267 - parser - INFO - Page 29: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,294 - parser - INFO - Page 30: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,308 - parser - INFO - Page 31: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,319 - parser - INFO - Page 32: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,330 - parser - INFO - Page 33: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,345 - parser - INFO - Page 34: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,356 - parser - INFO - Page 35: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,367 - parser - INFO - Page 36: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,379 - parser - INFO - Page 37: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,390 - parser - INFO - Page 38: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,404 - parser - INFO - Page 39: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:07:09,408 - parser - INFO - Page 40: Extracted 4 voter cards. Mode: Searchable
+2026-08-18 20:07:09,413 - parser - INFO - Page 41: Extracted 15 voter cards. Mode: Searchable
+2026-08-18 20:07:09,422 - parser - INFO - Page 42: Extracted 29 voter cards. Mode: Searchable
+2026-08-18 20:07:10,157 - excel_export - INFO - Start Excel Export
+2026-08-18 20:07:11,409 - excel_export - INFO - Rows Written: 1206
+2026-08-18 20:07:11,410 - excel_export - INFO - Duplicates Removed: 0
+2026-08-18 20:07:11,410 - excel_export - INFO - Export Time: 1.2519s
+2026-08-18 20:07:11,410 - excel_export - INFO - Output File: D:\AI WORK\output\AP500011_voter_details_2.xlsx
+2026-08-18 20:07:11,415 - app - INFO - Task 6049e110-0bc2-4edc-9fd0-b2f60946d169 Extraction Summary:
+  PDF Name: AP500011.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 1207
+  Unique Records Extracted: 1207
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-18 20:07:11,415 - app - INFO - Task 6049e110-0bc2-4edc-9fd0-b2f60946d169: Temporary PDF cleared.
+2026-08-18 20:14:07,097 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-18 20:14:07,712 - verify_app - INFO - Executing integration test pipeline...
+2026-08-18 20:14:07,754 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-08-18 20:14:07,754 - verify_app - INFO - Summary extracted elector count: 58
+2026-08-18 20:14:07,755 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-08-18 20:14:07,766 - parser - INFO - Global grid calibrated from page: x=36.0..576.0, y=60.4..740.0, col_w=180.0, row_h=68.0
+2026-08-18 20:14:07,766 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-08-18 20:14:07,775 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:14:07,787 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:14:07,913 - verify_app - ERROR - Integration pipeline failure: code=2: cannot remove file 'test_voters_scanned.pdf': Permission denied
+Traceback (most recent call last):
+  File "D:\AI WORK\verify_app.py", line 215, in test_pipeline
+    create_scanned_mock_pdf(searchable_pdf, scanned_pdf)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI WORK\verify_app.py", line 153, in create_scanned_mock_pdf
+    sc_doc.save(output_scanned_pdf)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI WORK\.venv\Lib\site-packages\pymupdf\__init__.py", line 6571, in save
+    mupdf.pdf_save_document(pdf, filename, opts)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI WORK\.venv\Lib\site-packages\pymupdf\mupdf.py", line 60497, in pdf_save_document
+    return _mupdf.pdf_save_document(doc, filename, opts)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+pymupdf.mupdf.FzErrorSystem: code=2: cannot remove file 'test_voters_scanned.pdf': Permission denied
+2026-08-18 20:14:38,525 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-18 20:14:38,959 - verify_app - INFO - Executing integration test pipeline...
+2026-08-18 20:14:38,992 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-08-18 20:14:38,992 - verify_app - INFO - Summary extracted elector count: 58
+2026-08-18 20:14:38,992 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-08-18 20:14:39,003 - parser - INFO - Global grid calibrated from page: x=36.0..576.0, y=60.4..740.0, col_w=180.0, row_h=68.0
+2026-08-18 20:14:39,003 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-08-18 20:14:39,011 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:14:39,024 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:14:39,178 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-08-18 20:14:39,189 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-08-18 20:14:50,701 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-08-18 20:15:18,985 - app - INFO - Task 80bd320d-fd83-41bb-8cc9-3c8e12f69660: Starting voter roll conversion pipeline for PDF: AP500011 (2).pdf
+2026-08-18 20:15:19,046 - parser - INFO - Summary Page: Parsed declared total electors count = 12
+2026-08-18 20:15:19,049 - parser - INFO - PDF D:\AI WORK\uploads\80bd320d-fd83-41bb-8cc9-3c8e12f69660.pdf opened. Total pages: 5
+2026-08-18 20:15:19,069 - parser - INFO - Global grid calibrated from page: x=16.9..535.2, y=89.7..794.2, col_w=172.8, row_h=70.5
+2026-08-18 20:15:19,081 - parser - INFO - Page 1: Extracted 27 voter cards. Mode: Searchable
+2026-08-18 20:15:19,081 - parser - INFO - Page 2: Skipped cover/summary page (selectable).
+2026-08-18 20:15:19,083 - parser - INFO - Page 3: Extracted 7 voter cards. Mode: Searchable
+2026-08-18 20:15:19,087 - parser - INFO - Page 4: Extracted 5 voter cards. Mode: Searchable
+2026-08-18 20:15:19,090 - parser - INFO - Page 5: Skipped cover/summary page (selectable).
+2026-08-18 20:15:19,104 - app - WARNING - Task 80bd320d-fd83-41bb-8cc9-3c8e12f69660: Warning: Elector count mismatch! PDF summary lists 12 electors, but we extracted 18 unique records.
+2026-08-18 20:15:19,105 - excel_export - INFO - Start Excel Export
+2026-08-18 20:15:19,145 - excel_export - INFO - Rows Written: 2
+2026-08-18 20:15:19,146 - excel_export - INFO - Duplicates Removed: 0
+2026-08-18 20:15:19,146 - excel_export - INFO - Export Time: 0.0403s
+2026-08-18 20:15:19,146 - excel_export - INFO - Output File: D:\AI WORK\output\AP500011 (2)_voter_details_1.xlsx
+2026-08-18 20:15:19,151 - app - INFO - Task 80bd320d-fd83-41bb-8cc9-3c8e12f69660 Extraction Summary:
+  PDF Name: AP500011 (2).pdf
+  Declared Electors Count: 12
+  Total Cards Parsed: 18
+  Unique Records Extracted: 18
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: Warning: Elector count mismatch! PDF summary lists 12 electors, but we extracted 18 unique records.
+2026-08-18 20:15:19,152 - app - INFO - Task 80bd320d-fd83-41bb-8cc9-3c8e12f69660: Temporary PDF cleared.
+2026-08-18 20:15:43,483 - app - INFO - Task 37fccbac-f0e5-42b7-be9c-798588266c0e: Starting voter roll conversion pipeline for PDF: AP500011 (1).pdf
+2026-08-18 20:15:43,520 - parser - INFO - PDF D:\AI WORK\uploads\37fccbac-f0e5-42b7-be9c-798588266c0e.pdf opened. Total pages: 41
+2026-08-18 20:15:43,770 - parser - INFO - Global grid calibrated from page: x=14.0..520.2, y=59.5..780.5, col_w=168.7, row_h=72.1
+2026-08-18 20:15:43,781 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,797 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,809 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,820 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,830 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,844 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,858 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,870 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,882 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,895 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,907 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,918 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,929 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,942 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,953 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,965 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,976 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:43,989 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,002 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,015 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,027 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,040 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,052 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,064 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,076 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,091 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,107 - parser - INFO - Page 27: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,120 - parser - INFO - Page 28: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,133 - parser - INFO - Page 29: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,145 - parser - INFO - Page 30: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,156 - parser - INFO - Page 31: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,169 - parser - INFO - Page 32: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,181 - parser - INFO - Page 33: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,191 - parser - INFO - Page 34: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,204 - parser - INFO - Page 35: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,216 - parser - INFO - Page 36: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,227 - parser - INFO - Page 37: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,238 - parser - INFO - Page 38: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,251 - parser - INFO - Page 39: Extracted 30 voter cards. Mode: Searchable
+2026-08-18 20:15:44,256 - parser - INFO - Page 40: Extracted 4 voter cards. Mode: Searchable
+2026-08-18 20:15:44,263 - parser - INFO - Page 41: Extracted 15 voter cards. Mode: Searchable
+2026-08-18 20:15:44,973 - excel_export - INFO - Start Excel Export
+2026-08-18 20:15:46,262 - excel_export - INFO - Rows Written: 1189
+2026-08-18 20:15:46,263 - excel_export - INFO - Duplicates Removed: 0
+2026-08-18 20:15:46,263 - excel_export - INFO - Export Time: 1.2892s
+2026-08-18 20:15:46,264 - excel_export - INFO - Output File: D:\AI WORK\output\AP500011 (1)_voter_details_1.xlsx
+2026-08-18 20:15:46,266 - app - INFO - Task 37fccbac-f0e5-42b7-be9c-798588266c0e Extraction Summary:
+  PDF Name: AP500011 (1).pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 1189
+  Unique Records Extracted: 1189
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-18 20:15:46,266 - app - INFO - Task 37fccbac-f0e5-42b7-be9c-798588266c0e: Temporary PDF cleared.
+2026-08-19 20:31:50,800 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-19 20:32:55,987 - app - INFO - Task 4b316bfb-e969-4499-aa5e-4f9024802c1c: Starting voter roll conversion pipeline for PDF: AP000120.pdf
+2026-08-19 20:33:48,669 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-08-19 20:34:03,016 - app - INFO - Task 27d908f1-9353-4274-a33b-d6c51a93f462: Starting voter roll conversion pipeline for PDF: AP000120.pdf
+2026-08-19 20:34:03,160 - parser - INFO - PDF D:\AI WORK\uploads\27d908f1-9353-4274-a33b-d6c51a93f462.pdf opened. Total pages: 26
+2026-08-19 20:34:03,535 - parser - INFO - Global grid calibrated from page: x=21.8..508.1, y=60.6..774.6, col_w=162.1, row_h=71.4
+2026-08-19 20:34:03,557 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,583 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,604 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,633 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,656 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,695 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,727 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,756 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,777 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,807 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,833 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,869 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,897 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,918 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,944 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,964 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:03,989 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:04,036 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:04,073 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:04,111 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:04,131 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:04,156 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:04,186 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:04,221 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:04,270 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 20:34:04,306 - parser - INFO - Page 26: Extracted 24 voter cards. Mode: Searchable
+2026-08-19 20:34:05,306 - excel_export - INFO - Start Excel Export
+2026-08-19 20:34:06,999 - excel_export - INFO - Rows Written: 774
+2026-08-19 20:34:07,001 - excel_export - INFO - Duplicates Removed: 0
+2026-08-19 20:34:07,002 - excel_export - INFO - Export Time: 1.6928s
+2026-08-19 20:34:07,002 - excel_export - INFO - Output File: D:\AI WORK\output\AP000120_voter_details.xlsx
+2026-08-19 20:34:07,006 - app - INFO - Task 27d908f1-9353-4274-a33b-d6c51a93f462 Extraction Summary:
+  PDF Name: AP000120.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 774
+  Unique Records Extracted: 774
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-19 20:34:07,007 - app - INFO - Task 27d908f1-9353-4274-a33b-d6c51a93f462: Temporary PDF cleared.
+2026-08-19 21:31:39,902 - extractor - INFO - Page 2: PaddleOCR extracted 105 words.
+2026-08-19 21:31:39,979 - parser - INFO - Summary Page: Parsed declared total electors count = 774
+2026-08-19 21:31:40,020 - parser - INFO - PDF D:\AI WORK\uploads\4b316bfb-e969-4499-aa5e-4f9024802c1c.pdf opened. Total pages: 28
+2026-08-19 21:31:40,403 - parser - INFO - Global grid calibrated from page: x=21.8..508.1, y=60.6..774.6, col_w=162.1, row_h=71.4
+2026-08-19 21:31:40,406 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-08-19 21:31:40,408 - parser - INFO - Page 2: Skipped cover/summary page (selectable).
+2026-08-19 21:31:40,426 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,446 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,464 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,480 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,496 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,515 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,534 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,550 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,567 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,582 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,599 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,620 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,644 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,661 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,676 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,692 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,707 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,724 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,740 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,756 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,774 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,789 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,804 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,820 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,837 - parser - INFO - Page 27: Extracted 30 voter cards. Mode: Searchable
+2026-08-19 21:31:40,852 - parser - INFO - Page 28: Extracted 24 voter cards. Mode: Searchable
+2026-08-19 21:31:41,482 - app - INFO - Task 4b316bfb-e969-4499-aa5e-4f9024802c1c: Validation SUCCESS: Extracted count matches summary page count (774).
+2026-08-19 21:31:41,484 - excel_export - INFO - Start Excel Export
+2026-08-19 21:31:42,678 - excel_export - INFO - Rows Written: 774
+2026-08-19 21:31:42,678 - excel_export - INFO - Duplicates Removed: 0
+2026-08-19 21:31:42,679 - excel_export - INFO - Export Time: 1.1942s
+2026-08-19 21:31:42,679 - excel_export - INFO - Output File: D:\AI WORK\output\AP000120_voter_details_1.xlsx
+2026-08-19 21:31:42,686 - app - INFO - Task 4b316bfb-e969-4499-aa5e-4f9024802c1c Extraction Summary:
+  PDF Name: AP000120.pdf
+  Declared Electors Count: 774
+  Total Cards Parsed: 774
+  Unique Records Extracted: 774
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-19 21:31:42,688 - app - INFO - Task 4b316bfb-e969-4499-aa5e-4f9024802c1c: Temporary PDF cleared.
+2026-08-24 20:40:38,146 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-24 20:40:43,938 - verify_app - INFO - Executing integration test pipeline...
+2026-08-24 20:40:44,270 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-08-24 20:40:44,271 - verify_app - INFO - Summary extracted elector count: 58
+2026-08-24 20:40:44,275 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-08-24 20:40:44,319 - parser - INFO - Global grid calibrated from page: x=36.0..576.0, y=60.4..740.0, col_w=180.0, row_h=68.0
+2026-08-24 20:40:44,320 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-08-24 20:40:44,366 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 20:40:44,402 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 20:40:44,931 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-08-24 20:40:44,988 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-08-24 20:42:32,991 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-24 20:42:42,706 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-08-24 21:03:17,391 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-24 21:03:30,224 - verify_app - INFO - Executing integration test pipeline...
+2026-08-24 21:03:30,395 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-08-24 21:03:30,396 - verify_app - INFO - Summary extracted elector count: 58
+2026-08-24 21:03:30,398 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-08-24 21:03:30,430 - parser - INFO - Global grid calibrated from page: x=36.0..576.0, y=60.4..740.0, col_w=180.0, row_h=68.0
+2026-08-24 21:03:30,432 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-08-24 21:03:30,485 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:03:30,544 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:03:31,010 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-08-24 21:03:31,031 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-08-24 21:03:31,212 - extractor - ERROR - Failed to initialize PaddleOCR engine: No module named 'paddleocr'
+2026-08-24 21:03:31,212 - extractor - ERROR - Page 1 PaddleOCR failure: No module named 'paddleocr'
+2026-08-24 21:03:31,213 - parser - ERROR - Page 1: OCR failed: No module named 'paddleocr'
+2026-08-24 21:03:31,214 - parser - WARNING - Page 1: No body words found. Skipping page.
+2026-08-24 21:03:31,216 - verify_app - ERROR - Integration pipeline failure: Expected 30 cards from scanned page, got 0
+Traceback (most recent call last):
+  File "D:\AI WORK\verify_app.py", line 222, in test_pipeline
+    assert len(ocr_blocks_with_conf) == 30, f"Expected 30 cards from scanned page, got {len(ocr_blocks_with_conf)}"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected 30 cards from scanned page, got 0
+2026-08-24 21:03:40,560 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-24 21:03:42,187 - verify_app - INFO - Executing integration test pipeline...
+2026-08-24 21:03:42,280 - parser - INFO - Summary Page: Parsed declared total electors count = 58
+2026-08-24 21:03:42,281 - verify_app - INFO - Summary extracted elector count: 58
+2026-08-24 21:03:42,283 - parser - INFO - PDF test_voters_searchable.pdf opened. Total pages: 3
+2026-08-24 21:03:42,303 - parser - INFO - Global grid calibrated from page: x=36.0..576.0, y=60.4..740.0, col_w=180.0, row_h=68.0
+2026-08-24 21:03:42,304 - parser - INFO - Page 1: Skipped cover/summary page (selectable).
+2026-08-24 21:03:42,320 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:03:42,341 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:03:42,637 - parser - INFO - PDF test_voters_scanned.pdf opened. Total pages: 1
+2026-08-24 21:03:42,651 - parser - INFO - Page 1: Text quality poor or scanned. Running PaddleOCR...
+2026-08-24 21:04:29,958 - extractor - INFO - PaddleOCR engine (paddle_dynamic) initialized successfully.
+2026-08-24 21:19:23,085 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-24 21:20:44,109 - app - INFO - Task 355705d7-78e4-41cc-9a88-0e6802760b5d: Starting voter roll conversion pipeline for PDF: AP600015.pdf
+2026-08-24 21:20:44,500 - parser - INFO - PDF D:\AI WORK\uploads\355705d7-78e4-41cc-9a88-0e6802760b5d.pdf opened. Total pages: 40
+2026-08-24 21:20:45,501 - parser - INFO - Global grid calibrated from page: x=14.0..515.6, y=59.5..780.5, col_w=167.2, row_h=72.1
+2026-08-24 21:20:45,616 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:45,675 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:45,724 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:45,792 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:45,854 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:45,916 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:45,958 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,007 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,062 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,111 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,166 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,237 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,289 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,341 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,401 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,466 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,528 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,570 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,618 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,672 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,743 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,800 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,869 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:46,952 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:47,026 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:47,139 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:47,334 - parser - INFO - Page 27: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:47,431 - parser - INFO - Page 28: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:47,526 - parser - INFO - Page 29: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:47,583 - parser - INFO - Page 30: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:47,650 - parser - INFO - Page 31: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:47,716 - parser - INFO - Page 32: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:47,827 - parser - INFO - Page 33: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:47,882 - parser - INFO - Page 34: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:47,942 - parser - INFO - Page 35: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:48,035 - parser - INFO - Page 36: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:48,098 - parser - INFO - Page 37: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:48,202 - parser - INFO - Page 38: Extracted 30 voter cards. Mode: Searchable
+2026-08-24 21:20:48,297 - parser - INFO - Page 39: Extracted 14 voter cards. Mode: Searchable
+2026-08-24 21:20:48,327 - parser - INFO - Page 40: Extracted 21 voter cards. Mode: Searchable
+2026-08-24 21:20:50,852 - excel_export - INFO - Start Excel Export
+2026-08-24 21:20:57,380 - excel_export - INFO - Rows Written: 1163
+2026-08-24 21:20:57,382 - excel_export - INFO - Duplicates Removed: 0
+2026-08-24 21:20:57,385 - excel_export - INFO - Export Time: 6.5278s
+2026-08-24 21:20:57,385 - excel_export - INFO - Output File: D:\AI WORK\output\AP600015_voter_details.xlsx
+2026-08-24 21:20:57,393 - app - INFO - Task 355705d7-78e4-41cc-9a88-0e6802760b5d Extraction Summary:
+  PDF Name: AP600015.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 1163
+  Unique Records Extracted: 1163
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-24 21:20:57,395 - app - INFO - Task 355705d7-78e4-41cc-9a88-0e6802760b5d: Temporary PDF cleared.
+2026-08-28 19:40:54,241 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-08-28 19:43:47,566 - app - INFO - Task 7eb6518b-0fbd-4fba-b7df-5a61b57f718a: Starting voter roll conversion pipeline for PDF: AP800017.pdf
+2026-08-28 19:43:47,667 - parser - INFO - PDF D:\AI WORK\uploads\7eb6518b-0fbd-4fba-b7df-5a61b57f718a.pdf opened. Total pages: 27
+2026-08-28 19:43:47,797 - parser - INFO - Global grid calibrated from page: x=14.0..513.2, y=59.4..780.4, col_w=166.4, row_h=72.1
+2026-08-28 19:43:47,806 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,821 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,833 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,845 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,858 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,867 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,878 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,888 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,897 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,908 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,920 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,930 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,941 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,952 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,963 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,975 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,986 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:47,996 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:48,006 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:48,019 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:48,034 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:48,047 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:48,061 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:48,074 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:48,095 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-08-28 19:43:48,100 - parser - INFO - Page 26: Extracted 7 voter cards. Mode: Searchable
+2026-08-28 19:43:48,104 - parser - INFO - Page 27: Extracted 18 voter cards. Mode: Searchable
+2026-08-28 19:43:48,500 - excel_export - INFO - Start Excel Export
+2026-08-28 19:43:49,263 - excel_export - INFO - Rows Written: 761
+2026-08-28 19:43:49,263 - excel_export - INFO - Duplicates Removed: 0
+2026-08-28 19:43:49,263 - excel_export - INFO - Export Time: 0.7624s
+2026-08-28 19:43:49,263 - excel_export - INFO - Output File: D:\AI WORK\output\AP800017_voter_details.xlsx
+2026-08-28 19:43:49,266 - app - INFO - Task 7eb6518b-0fbd-4fba-b7df-5a61b57f718a Extraction Summary:
+  PDF Name: AP800017.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 761
+  Unique Records Extracted: 761
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-08-28 19:43:49,267 - app - INFO - Task 7eb6518b-0fbd-4fba-b7df-5a61b57f718a: Temporary PDF cleared.
+2026-09-01 22:48:33,085 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-09-01 22:48:38,203 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-09-01 22:48:48,870 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-09-01 22:49:09,543 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
+2026-09-01 23:09:05,199 - app - INFO - Task 175b941f-e2ab-4b0d-a83b-9c343eafd351: Starting voter roll conversion pipeline for PDF: AP000121.pdf
+2026-09-01 23:09:07,669 - parser - INFO - PDF D:\AI WORK\uploads\175b941f-e2ab-4b0d-a83b-9c343eafd351.pdf opened. Total pages: 30
+2026-09-01 23:09:11,185 - parser - INFO - Global grid calibrated from page: x=21.2..507.5, y=60.6..774.6, col_w=162.1, row_h=71.4
+2026-09-01 23:09:11,350 - parser - INFO - Page 1: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:11,483 - parser - INFO - Page 2: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:11,637 - parser - INFO - Page 3: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:11,767 - parser - INFO - Page 4: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:11,939 - parser - INFO - Page 5: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:12,094 - parser - INFO - Page 6: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:12,269 - parser - INFO - Page 7: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:12,513 - parser - INFO - Page 8: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:12,651 - parser - INFO - Page 9: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:12,740 - parser - INFO - Page 10: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:12,788 - parser - INFO - Page 11: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:12,875 - parser - INFO - Page 12: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:12,975 - parser - INFO - Page 13: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:13,040 - parser - INFO - Page 14: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:13,139 - parser - INFO - Page 15: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:13,205 - parser - INFO - Page 16: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:13,275 - parser - INFO - Page 17: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:13,364 - parser - INFO - Page 18: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:13,416 - parser - INFO - Page 19: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:13,481 - parser - INFO - Page 20: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:13,538 - parser - INFO - Page 21: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:13,613 - parser - INFO - Page 22: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:13,711 - parser - INFO - Page 23: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:13,862 - parser - INFO - Page 24: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:14,003 - parser - INFO - Page 25: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:14,176 - parser - INFO - Page 26: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:14,275 - parser - INFO - Page 27: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:14,396 - parser - INFO - Page 28: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:14,507 - parser - INFO - Page 29: Extracted 30 voter cards. Mode: Searchable
+2026-09-01 23:09:14,551 - parser - INFO - Page 30: Extracted 25 voter cards. Mode: Searchable
+2026-09-01 23:09:17,530 - excel_export - INFO - Start Excel Export
+2026-09-01 23:09:29,748 - excel_export - INFO - Rows Written: 895
+2026-09-01 23:09:29,748 - excel_export - INFO - Duplicates Removed: 0
+2026-09-01 23:09:29,748 - excel_export - INFO - Export Time: 12.2138s
+2026-09-01 23:09:29,749 - excel_export - INFO - Output File: D:\AI WORK\output\AP000121_voter_details.xlsx
+2026-09-01 23:09:29,765 - app - INFO - Task 175b941f-e2ab-4b0d-a83b-9c343eafd351 Extraction Summary:
+  PDF Name: AP000121.pdf
+  Declared Electors Count: None
+  Total Cards Parsed: 895
+  Unique Records Extracted: 895
+  Duplicates Removed: 0
+  Average OCR Confidence: 100.00%
+  Records Flagged for Review: 0
+  Mismatch Warning: None
+2026-09-01 23:09:29,784 - app - INFO - Task 175b941f-e2ab-4b0d-a83b-9c343eafd351: Temporary PDF cleared.
+2026-09-21 21:38:10,939 - root - INFO - Logging configured successfully. Outputting to logs/conversion.log
