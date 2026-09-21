@@ -30,9 +30,12 @@ def get_ocr_instance():
             # Initialize with English engine and paddle_dynamic eager execution engine
             _ocr_instance = PaddleOCR(use_angle_cls=True, lang='en', engine='paddle_dynamic')
             logger.info("PaddleOCR engine (paddle_dynamic) initialized successfully.")
+        except ImportError:
+            logger.warning("PaddleOCR module not installed. Running in lightweight serverless mode.")
+            return None
         except Exception as e:
             logger.error(f"Failed to initialize PaddleOCR engine: {e}")
-            raise e
+            return None
     return _ocr_instance
 
 def run_ocr_on_page(page, page_num: int, temp_dir: str) -> List[Dict[str, Any]]:
@@ -52,6 +55,9 @@ def run_ocr_on_page(page, page_num: int, temp_dir: str) -> List[Dict[str, Any]]:
     try:
         # 2. Retrieve the OCR engine
         ocr = get_ocr_instance()
+        if ocr is None:
+            logger.warning(f"Page {page_num}: OCR requested but PaddleOCR engine is unavailable.")
+            return words_result
         
         # 3. Perform text detection
         ocr_result = ocr.ocr(img_path, use_doc_orientation_classify=False, use_doc_unwarping=False)
