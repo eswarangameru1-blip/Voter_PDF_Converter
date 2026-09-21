@@ -332,11 +332,13 @@ document.addEventListener("DOMContentLoaded", () => {
             activeFilename = data.filename.replace(/\.pdf$/i, "") + "_voter_details.xlsx";
         }
 
-        resTotal.textContent = data.records_found || 0;
-        
-        // Extract duplicates/invalid records from data or display mock/safe defaults
-        resDuplicates.textContent = data.duplicates_removed || 0;
-        resInvalid.textContent = data.invalid_records || 0;
+        const totalRecs = (data.records_found !== undefined && data.records_found !== null) 
+            ? data.records_found 
+            : ((data.voter_count !== undefined && data.voter_count !== null) ? data.voter_count : 0);
+
+        resTotal.textContent = totalRecs;
+        resDuplicates.textContent = data.duplicates_removed !== undefined ? data.duplicates_removed : 0;
+        resInvalid.textContent = data.invalid_records !== undefined ? data.invalid_records : 0;
         
         let elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
         resDuration.textContent = `${elapsed}s`;

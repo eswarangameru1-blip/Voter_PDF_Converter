@@ -338,10 +338,21 @@ async def upload_pdf(
     # 7. Add pipeline convert to background executor (or synchronous execution on Vercel)
     if IS_VERCEL:
         process_pdf_task(task_id, temp_pdf_path, file.filename)
+        task = tasks_db.get(task_id, {})
         return {
             "task_id": task_id,
-            "status": tasks_db[task_id].get("status"),
-            "excel_b64": tasks_db[task_id].get("excel_b64"),
+            "status": task.get("status"),
+            "stage": task.get("stage"),
+            "progress": task.get("progress"),
+            "current_page": task.get("current_page"),
+            "total_pages": task.get("total_pages"),
+            "records_found": task.get("voter_count", 0),
+            "voter_count": task.get("voter_count", 0),
+            "duplicates_removed": task.get("duplicates_removed", 0),
+            "invalid_records": task.get("invalid_records", 0),
+            "warning": task.get("warning"),
+            "error": task.get("error"),
+            "excel_b64": task.get("excel_b64"),
             "filename": file.filename
         }
     else:
